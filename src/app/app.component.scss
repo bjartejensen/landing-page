@@ -1,0 +1,63 @@
+@use "../styles.scss" as scss;
+
+.container {
+  $max-width: 1110px;
+  $padding: 1rem;
+
+  width: min($max-width, 100% - $padding * 2);
+  margin-inline: auto;
+}
+
+p:not([class]) {
+  opacity: 0.75;
+  background-color: rgb(221, 216, 216);
+  max-width: 35ch;
+}
+
+p[data-width="full"] {
+  max-width: 45ch;
+}
+
+.even-columns {
+  display: grid;
+  gap: 1rem;
+}
+
+.cta {
+  position: relative;
+  isolation: isolate;
+
+  ::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-image: url("../assets/images/bg-tablet-pattern.svg"),
+      url("../assets/images/bg-tablet-pattern.svg");
+    background-repeat: no-repeat;
+    background-position: -10rem -5rem, 80rem -40rem;
+    opacity: 0.025;
+  }
+}
+
+@media (min-width: 50em) {
+  .cta {
+    text-align: left;
+  }
+}
+
+.vertical-align-center {
+  align-items: center;
+}
+
+.justify-self-end {
+  justify-self: end;
+}
+
+@media (min-width: 50em) {
+  .even-columns {
+    //background-color: yellowgreen;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
+}
