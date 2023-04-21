@@ -1,0 +1,12 @@
+.even-columns {
+  display: grid;
+  gap: 1rem;
+  background-color: orange;
+}
+
+@media (min-width: 50em) {
+  .even-columns {
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
+}

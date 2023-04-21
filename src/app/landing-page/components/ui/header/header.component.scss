@@ -1,0 +1,32 @@
+@use "../../../../../styles.scss" as scss;
+
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  img {
+    display: inline-block;
+    width: 200px;
+    height: 100%;
+    padding: 1rem;
+    object-fit: contain;
+  }
+}
+
+.nav-list {
+  display: flex;
+  gap: clamp(1.5rem, 5vw, 3rem);
+  font-family: 500;
+
+  a {
+    color: scss.$atrib-green;
+    text-decoration: none;
+    background-color: papayawhip;
+
+    &:focus,
+    :hover {
+      color: green;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+@use "./palettes" as pal;
+@use "./themes" as theme;
+
+$atrib-blue: map-get(pal.$atrib-palette-primary, 500);
+$atrib-green: map-get(pal.$atrib-palette-accent, 500);
+
+$atrib-dialog-color: map-get(
+  map-get(theme.$atrib-dark-theme, background),
+  dialog
+);
+
+$atrib-background-color: map-get(
+  map-get(theme.$atrib-dark-theme, background),
+  background
+);
+
+$atrib-text-color: map-get(map-get(theme.$atrib-dark-theme, foreground), text);

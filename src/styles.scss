@@ -1,8 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
 //@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,400;0,700;0,900;1,200;1,400;1,700;1,900&display=swap&family=Poppins:wght@200;300;400;700;900&family=Montserrat:wght@300;400;500;600;800;900&display=swap');
-@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700");
 
-$font: "Be Vietnam Pro", sans-serif;
+@use "../styles/fonts" as fonts;
+@use "../styles/colors" as colors;
+
+@forward "../styles/fonts";
+@forward "../styles/colors";
+@forward "../styles/elements";
+
+//Basic fonts
+
+$w-map: "sm" 800, "md" 850, "lg" 900, "mg" 950;
+$fs-map: "small" 0.5rem, "medium" 1rem, "large" 2rem, "huge" 5rem;
+
+$dark-blue: #272f41;
+
+@each $ss, $sw in $w-map {
+  $i: index(($w-map), ($ss $sw));
+  //@debug $i;
+  @each $name, $size in $fs-map {
+    .fs-#{$ss}-#{$name} {
+      @media (min-width: #{$sw}px) {
+        font-size: #{$size};
+        color: hsl(calc($i * 100), 50%, 50%);
+      }
+    }
+  }
+}
 
 .visually-hidden {
   position: absolute;
@@ -27,8 +51,8 @@ $clr-primary-400: hsl(228, 39%, 23%);
 $clr-neutral-900: hsl(232, 12%, 13%);
 $clr-neutral-100: hsl(0, 0%, 100%);
 
-$ff-body: $font;
-$ff-heading: $font;
+$ff-body: fonts.$font;
+$ff-heading: fonts.$special-font;
 
 $fw-regular: 400;
 $fw-semi-bold: 500;
@@ -58,8 +82,9 @@ $size-900: 4rem;
 
 :root {
   font-size: $fs-body;
-  color: $clr-primary-400;
-  font-family: $ff-body;
+  color: colors.$atrib-text-color; //$clr-primary-400;
+  font-family: fonts.$special-font;
+  background-color: colors.$atrib-background-color;
 }
 
 @media (min-width: 50em) {
@@ -261,30 +286,8 @@ select {
   margin-top: $size-600;
 }
 
-.nav-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 .mobile-nav-toggle {
   display: none;
-}
-
-.nav-list {
-  display: flex;
-  gap: clamp($size-500, 5vw, $size-800);
-  font-family: $fw-semi-bold;
-
-  a {
-    color: $clr-primary-400;
-    text-decoration: none;
-
-    &:focus,
-    :hover {
-      color: $clr-accent-400;
-    }
-  }
 }
 
 @media (max-width: 50em) {
@@ -364,4 +367,13 @@ select {
 //Excluding the first element
 .flow * + * {
   margin-top: var(--flow-spacer, 3em);
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }

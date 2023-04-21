@@ -1,0 +1,35 @@
+<header class="primary-header">
+  <div class="container" data-clr="red">
+    <div class="nav-wrapper">
+      <a href=""
+        ><img src="../assets/atrib/landing/ATRIB LOGO.png" alt="manage"
+      /></a>
+      <button
+        class="mobile-nav-toggle"
+        aria-controls="primary-navigation"
+        aria-expanded="false"
+      >
+        <img
+          src="../assets/images/icon-hamburger.svg"
+          alt=""
+          aria-hidden="true"
+        />
+        <img
+          class="icon-closed"
+          src="../assets/images/icon-close.svg"
+          alt=""
+          aria-hidden="true"
+        />
+        <span class="visually-hidden">Menu</span>
+      </button>
+      <nav class="primary-navigation" id="primary-navigation">
+        <ul role="list" class="nav-list" aria-label="Primary">
+          <li class="flow"><a [routerLink]="['/home']">Home</a></li>
+          <li class="flow"><a [routerLink]="['/why']">Introduction</a></li>
+          <li class="flow"><a [routerLink]="['/how']">How it Works</a></li>
+        </ul>
+      </nav>
+      <button class="button | display-md-inline-flex">Log In</button>
+    </div>
+  </div>
+</header>
