@@ -1,5 +1,9 @@
 @use "../../../../../styles.scss" as scss;
 
+header {
+  width: 100%;
+}
+
 .nav-wrapper {
   display: flex;
   align-items: center;
@@ -7,26 +11,23 @@
 
   img {
     display: inline-block;
-    width: 200px;
-    height: 100%;
-    padding: 1rem;
     object-fit: contain;
   }
 }
 
 .nav-list {
   display: flex;
-  gap: clamp(1.5rem, 5vw, 3rem);
-  font-family: 500;
+  //gap: clamp(1.5rem, 5vw, 3rem);
+  font-family: scss.$special-font;
 
   a {
-    color: scss.$atrib-green;
     text-decoration: none;
-    background-color: papayawhip;
+    cursor: pointer;
+    font-weight: 600;
 
     &:focus,
     :hover {
-      color: green;
+      color: scss.$atrib-blue;
     }
   }
 }

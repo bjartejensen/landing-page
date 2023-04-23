@@ -1,1 +1,36 @@
-<app-header></app-header> <app-home></app-home>
+<ng-template #default>
+  <h6>Ups!</h6>
+</ng-template>
+
+<app-header
+  [isSmallScreen]="isSmallScreen$ | async"
+  (selectedPageEmitter)="onPageSelected($event)"
+  (activateMobileMenuEmitter)="onActivateMobileMenuChanged($event)"
+></app-header>
+
+<main>
+  <app-mobile-menu
+    *ngIf="activateMobileMenu"
+    (closeMobileMenuEmitter)="onActivateMobileMenuChanged($event)"
+  ></app-mobile-menu>
+
+  <ng-container [ngSwitch]="selectedPage$ | async">
+    <ng-container *ngSwitchCase="'home'">
+      <app-home></app-home>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'why'">
+      <app-why></app-why>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'how'">
+      <app-how></app-how>
+    </ng-container>
+
+    <ng-container *gSwitchDefault>
+      <h6>Upsi!</h6>
+    </ng-container>
+  </ng-container>
+</main>
+
+<app-footer></app-footer>

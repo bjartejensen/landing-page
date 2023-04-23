@@ -15,67 +15,54 @@ $icons: "eye" "\f112"12px, "start" "\f12e"16px, "stop" "\f12f"10px;
 $bgc: green;
 
 body {
-  font-size: scss.$ff-body;
+  //font-size: scss.$ff-body;
   font-family: scss.$special-font;
-  color: scss.$clr-primary-400;
 }
 
 section {
   border: scss.$atrib-blue dashed 3px;
 }
 
-.container {
-  --bgcc: scss.$dark-blue;
-  --max-width: 1110px;
-  --padding: 1rem;
+// .container {
+//   --bgcc: scss.$dark-blue;
+//   --max-width: 1110px;
+//   --padding: 1rem;
 
-  width: min(var(--max-width), 100% - var(--padding) * 2);
-  margin-inline: auto;
-  background-color: var(--bgcc);
-}
+//   width: min(var(--max-width), 100% - var(--padding) * 2);
+//   height: ;
+//   margin-inline: auto;
+//   background-color: var(--bgcc);
+// }
 
-.nav-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  img {
-    display: inline-block;
-    width: 200px;
-    height: 100%;
-    padding: 1rem;
-    object-fit: contain;
-  }
-}
+// .nav-wrapper {
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+//   img {
+//     display: inline-block;
+//     width: 200px;
+//     height: 100%;
+//     padding: 1rem;
+//     object-fit: contain;
+//   }
+// }
 
-.nav-list {
-  display: flex;
-  gap: clamp(1.5rem, 5vw, 3rem);
-  font-family: 500;
+// .nav-list {
+//   display: flex;
+//   gap: clamp(1.5rem, 5vw, 3rem);
+//   font-family: 500;
 
-  a {
-    color: scss.$atrib-green;
-    text-decoration: none;
-    background-color: papayawhip;
+//   a {
+//     color: scss.$atrib-green;
+//     text-decoration: none;
+//     background-color: papayawhip;
 
-    &:focus,
-    :hover {
-      color: green;
-    }
-  }
-}
-
-.container[data-clr="red"] {
-  //--bgcc: purple;
-}
-p:not([class]) {
-  opacity: 0.75;
-  background-color: rgb(221, 216, 216);
-  max-width: 35ch;
-}
-
-p[data-width="full"] {
-  max-width: 45ch;
-}
+//     &:focus,
+//     :hover {
+//       color: green;
+//     }
+//   }
+// }
 
 // .even-columns {
 //   display: grid;

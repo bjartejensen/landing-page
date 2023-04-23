@@ -9,6 +9,10 @@ import { WhyComponent } from './components/ui/why/why.component';
 import { HowComponent } from './components/ui/how/how.component';
 import { RouterModule } from '@angular/router';
 import { FooterComponent } from './components/ui/footer/footer.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MobileMenuComponent } from './components/ui/mobile-menu/mobile-menu.component';
 
 @NgModule({
   declarations: [
@@ -18,8 +22,16 @@ import { FooterComponent } from './components/ui/footer/footer.component';
     WhyComponent,
     HowComponent,
     FooterComponent,
+    MobileMenuComponent,
   ],
-  imports: [CommonModule, RouterModule, LandingPageRoutingModule],
+  imports: [
+    CommonModule,
+    RouterModule,
+    LandingPageRoutingModule,
+    MatButtonModule,
+    MatIconModule,
+    LayoutModule,
+  ],
   exports: [FrontpageComponent],
 })
 export class LandingPageModule {}
