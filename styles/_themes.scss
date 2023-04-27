@@ -5,5 +5,15 @@ $primary: mat.define-palette(pal.$atrib-palette-primary);
 $accent: mat.define-palette(pal.$atrib-palette-accent);
 $warn: mat.define-palette(pal.$atrib-palette-warn);
 
-$atrib-dark-theme: mat.define-dark-theme($primary, $accent, $warn);
-$atrib-light-theme: mat.define-light-theme($primary, $accent, $warn);
+$atrib-light-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $primary,
+      accent: $accent,
+      warn: $warn,
+    ),
+  )
+);
+
+@include mat.all-component-themes($atrib-light-theme);
+@include mat.core();

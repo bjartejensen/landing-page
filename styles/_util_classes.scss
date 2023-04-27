@@ -1,0 +1,155 @@
+//Map of all supported screen resolution breaks
+$w-map: "m" 299, "sm" 699, "md" 899, "lg" 1199, "xl" 1399, "mg" 1799;
+
+//Map of types of alignments
+$align-map: "center" center, "start" start, "end" end;
+
+@each $ss, $sw in $w-map {
+  @each $amk, $amv in $align-map {
+    .jc-#{$ss}-#{$amk} {
+      @media (min-width: #{$sw}px) {
+        justify-content: #{$amv};
+      }
+    }
+
+    .ji-#{$ss}-#{$amk} {
+      @media (min-width: #{$sw}px) {
+        justify-items: #{$amv};
+      }
+    }
+
+    .ai-#{$ss}-#{$amk} {
+      @media (min-width: #{$sw}px) {
+        align-items: #{$amv};
+      }
+    }
+  }
+}
+
+//Map of types of display
+$display-map: "none" none, "flex" flex, "grid" grid, "block" block,
+  "inline" inline, "inline-block" inline-block;
+
+@each $ss, $sw in $w-map {
+  @each $dmk, $dmv in $display-map {
+    .d-#{$ss}-#{$dmk} {
+      @media (min-width: #{$sw}px) {
+        display: #{$dmv};
+        //display: none;
+      }
+    }
+  }
+}
+
+//Map of font-weights
+$fw-map: "100" 100, "200" 200, "300" 300, "400" 400, "500" 500, "600" 600,
+  "700" 700, "800" 800, "900" 900;
+
+@each $ss, $sw in $w-map {
+  @each $fwmk, $fwmv in $fw-map {
+    .fw-#{$ss}-#{$fwmk} {
+      @media (min-width: #{$sw}px) {
+        font-weight: #{$fwmv};
+      }
+    }
+  }
+}
+
+//Map of container widths from 10% to 100%
+$container-width-map: "10" 10%, "20" 20%, "25" 25%, "30" 30%, "40" 40%, "50" 50%,
+  "60" 60%, "70" 70%, "75" 75%, "80" 80%, "90" 90%, "100" 100%;
+
+@each $ss, $sw in $w-map {
+  @each $cwmk, $cwmv in $container-width-map {
+    .cw-#{$ss}-#{$cwmk} {
+      @media (min-width: #{$sw}px) {
+        width: #{$cwmv};
+      }
+    }
+  }
+}
+
+//Map of font-sizes
+$fs-map: "0" 0rem, "025" 0.25rem, "05" 0.5rem, "075" 0.75rem, "1" 1rem,
+  "125" 1.25rem, "15" 1.5rem, "175" 1.75rem, "2" 2rem, "25" 2.5rem, "3" 3rem,
+  "35" 3.5rem, "4" 4rem, "45" 4.5rem, "5" 5rem, "6" 6rem, "7" 7rem, "8" 8rem,
+  "9" 9rem, "10" 10rem "auto" auto;
+
+//Create utility class for all css properties that fits with font size types above
+@each $ss, $sw in $w-map {
+  $i: index(($w-map), ($ss $sw));
+  @each $name, $size in $fs-map {
+    .h-#{$ss}-#{$name} {
+      @media (min-width: #{$sw}px) {
+        height: #{$size};
+      }
+    }
+
+    .w-#{$ss}-#{$name} {
+      @media (min-width: #{$sw}px) {
+        width: #{$size};
+      }
+    }
+
+    .fs-#{$ss}-#{$name} {
+      @media (min-width: #{$sw}px) {
+        font-size: #{$size};
+        line-height: 1.1;
+      }
+    }
+
+    .lh-#{$ss}-#{$name} {
+      @media (min-width: #{$sw}px) {
+        line-height: calc(#{$size} * 1.1);
+      }
+    }
+
+    .gap-#{$ss}-#{$name} {
+      @media (min-width: #{$sw}px) {
+        gap: #{$size};
+      }
+    }
+
+    .p-#{$ss}-#{$name} {
+      @media (min-width: #{$sw}px) {
+        padding: #{$size};
+      }
+    }
+
+    .pb-#{$ss}-#{$name} {
+      @media (min-width: #{$sw}px) {
+        padding-block: #{$size};
+      }
+    }
+
+    .pi-#{$ss}-#{$name} {
+      @media (min-width: #{$sw}px) {
+        padding-inline: #{$size};
+      }
+    }
+
+    .m-#{$ss}-#{$name} {
+      @media (min-width: #{$sw}px) {
+        margin: #{$size};
+      }
+    }
+
+    .mb-#{$ss}-#{$name} {
+      @media (min-width: #{$sw}px) {
+        margin-block: #{$size};
+      }
+    }
+
+    .mi-#{$ss}-#{$name} {
+      @media (min-width: #{$sw}px) {
+        margin-inline: #{$size};
+      }
+    }
+
+    .mt-#{$ss}-#{$name} {
+      @media (min-width: #{$sw}px) {
+        margin-top: #{$size};
+      }
+    }
+  }
+}

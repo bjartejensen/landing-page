@@ -5,12 +5,12 @@ $atrib-blue: map-get(pal.$atrib-palette-primary, 500);
 $atrib-green: map-get(pal.$atrib-palette-accent, 500);
 
 $atrib-dialog-color: map-get(
-  map-get(theme.$atrib-dark-theme, background),
+  map-get(theme.$atrib-light-theme, background),
   dialog
 );
 
 $atrib-background-color: map-get(
-  map-get(theme.$atrib-dark-theme, background),
+  map-get(theme.$atrib-light-theme, background),
   background
 );
 
