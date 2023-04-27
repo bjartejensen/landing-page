@@ -1,44 +1,31 @@
-<header class="primary-header">
-  <div class="container">
-    <div class="nav-wrapper pi-sm-1 ai-m-center">
-      <a href=""
-        ><img
-          class="h-m-5 w-m-10 p-m-1"
-          src="../assets/atrib/landing/ATRIB LOGO.png"
-          alt="manage"
-      /></a>
-
-      <img
-        *ngIf="isSmallScreen"
-        class="w-m-5 h-m-5 p-m-1"
-        src="../assets/images/icon-hamburger.svg"
-        alt=""
-        aria-hidden="true"
-        (click)="activateMobileMenuEmitter.emit(true)"
-      />
-
-      <span class="visually-hidden">Menu</span>
-
-      <nav
-        *ngIf="!isSmallScreen"
-        class="primary-navigation fs-lg-15"
-        id="primary-navigation"
-      >
-        <ul role="list" class="nav-list gap-sm-2 gap-lg-3" aria-label="Primary">
-          <li class="flow">
-            <a (click)="selectedPageEmitter.emit('home')">Home</a>
-          </li>
-          <li class="flow">
-            <a (click)="selectedPageEmitter.emit('why')">Introduction</a>
-          </li>
-          <li class="flow">
-            <a (click)="selectedPageEmitter.emit('how')">How it Works</a>
-          </li>
-        </ul>
-      </nav>
-      <button *ngIf="!isSmallScreen" class="button fs-sm-1 lh-sm-1 p-sm-075">
-        Log In
-      </button>
-    </div>
+<div class="navigation-section">
+  <div class="logo-wrapper">
+    <img
+      class="h-m-7 w-m-7"
+      src="../assets/atrib/landing/ATRIB LOGO.png"
+      alt=""
+    />
   </div>
-</header>
+
+  <nav class="navigation" id="primary-navigation">
+    <ul role="list" class="jc-sm-center jc-lg-end" aria-label="Primary">
+      <li
+        class="mi-m-1 pi-md-0 pi-lg-1 fs-sm-125 fw-md-600 fs-sm-15 fw-sm-500"
+        *ngFor="let item of navItems.keys()"
+        (click)="selectedPageEmitter.emit(navItems.get(item))"
+      >
+        {{ item }}
+      </li>
+    </ul>
+  </nav>
+
+  <div class="cta">
+    <button
+      mat-button
+      *ngIf="!isSmallScreen"
+      class="button mi-sm-3 fs-xl-15 h-xl-3 pi-xl-15"
+    >
+      Login
+    </button>
+  </div>
+</div>

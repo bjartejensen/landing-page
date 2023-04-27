@@ -1,0 +1,46 @@
+@use "../../../../../styles.scss" as scss;
+
+.container {
+  display: grid;
+  background-color: map-get(scss.$atrib-palette-primary, 50);
+  grid-template-columns: 50% 25% 25%;
+  grid-template-areas:
+    "header navigation about"
+    "header navigation about";
+
+  @media (max-width: 699px) {
+    grid-template-columns: 40% 30% 30%;
+  }
+}
+
+.logo-wrapper {
+  display: grid;
+  place-items: center;
+
+  img {
+    display: inline-block;
+    object-fit: contain;
+  }
+}
+
+ul {
+  list-style: none;
+
+  li {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  grid-area: navigation;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  grid-area: about;
+}

@@ -14,4 +14,4 @@ $atrib-background-color: map-get(
   background
 );
 
-$atrib-text-color: map-get(map-get(theme.$atrib-dark-theme, foreground), text);
+$atrib-text-color: map-get(map-get(theme.$atrib-light-theme, foreground), text);

@@ -1,0 +1,36 @@
+@use "../styles/colors" as colors;
+
+@mixin atrib-scrollbar($clr: grey) {
+  $scroll-bar-clr: $clr;
+
+  $scrollbar-width: 0.85em;
+  $scrollbar-track-margin: 0.5em;
+  $scrollbar-track-border: 0.5em $scroll-bar-clr solid;
+  $scrollbar-track-border-radius: 100vw;
+  $scrollbar-thumb-border-radius: 100vw;
+
+  $scrollbar-thumb-background: darken($scroll-bar-clr, 20%);
+  $scrollbar-thumb-border: 0.25em $scroll-bar-clr solid;
+  $scrollbar-thumb-hover-background: darken($scroll-bar-clr, 40%);
+
+  ::-webkit-scrollbar {
+    width: $scrollbar-width;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: $clr;
+    border-radius: $scrollbar-track-border-radius;
+    margin-block: $scrollbar-track-margin;
+    border: $scrollbar-track-border;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: $scrollbar-thumb-background;
+    border-radius: $scrollbar-thumb-border-radius;
+    border: $scrollbar-thumb-border;
+
+    &:hover {
+      background: $scrollbar-thumb-hover-background;
+    }
+  }
+}

@@ -1,13 +1,29 @@
 @use "../../../../../styles.scss" as scss;
 
-header {
+.navigation-section {
+  display: flex;
+  flex: 1 0 100%;
   width: 100%;
+  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-self: center;
+  align-items: center;
+  overflow-x: hidden;
+
+  @media (max-width: 699px) {
+    grid-template-columns: 1fr 1fr;
+    background-color: map-get(scss.$atrib-palette-primary, 50);
+  }
 }
 
-.nav-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.logo-wrapper {
+  display: grid;
+  place-items: center;
+
+  @media (max-width: 699px) {
+    background-color: scss.$atrib-blue;
+  }
 
   img {
     display: inline-block;
@@ -15,19 +31,30 @@ header {
   }
 }
 
-.nav-list {
+.navigation {
   display: flex;
-  //gap: clamp(1.5rem, 5vw, 3rem);
-  font-family: scss.$special-font;
+  justify-content: flex-end;
+  width: 100%;
 
-  a {
-    text-decoration: none;
-    cursor: pointer;
-    font-weight: 600;
+  ul {
+    display: flex;
+    flex: 1 0 50%;
+    width: 100%;
+    align-items: center;
 
-    &:focus,
-    :hover {
-      color: scss.$atrib-blue;
+    li {
+      color: scss.$atrib-text-color;
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
+}
+
+.cta {
+  display: flex;
+  flex: 1 0 100%;
+  width: 100%;
+  justify-content: end;
+  align-items: center;
 }

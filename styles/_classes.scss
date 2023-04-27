@@ -8,24 +8,72 @@ $align-map: "center" center, "start" start, "end" end;
 
 @each $ss, $sw in $w-map {
   @each $amk, $amv in $align-map {
-    .jc-#{$ss}-#{$amv} {
+    .jc-#{$ss}-#{$amk} {
       @media (min-width: #{$sw}px) {
-        justify-content: #{$amk};
+        justify-content: #{$amv};
       }
     }
 
-    .ai-#{$ss}-#{$amv} {
+    .ji-#{$ss}-#{$amk} {
       @media (min-width: #{$sw}px) {
-        align-items: #{$amk};
+        justify-items: #{$amv};
+      }
+    }
+
+    .ai-#{$ss}-#{$amk} {
+      @media (min-width: #{$sw}px) {
+        align-items: #{$amv};
+      }
+    }
+  }
+}
+
+$display-map: "none" none, "flex" flex, "grid" grid, "block" block,
+  "inline" inline, "inline-block" inline-block;
+
+@each $ss, $sw in $w-map {
+  @each $dmk, $dmv in $display-map {
+    .d-#{$ss}-#{$dmk} {
+      @media (min-width: #{$sw}px) {
+        display: #{$dmv};
+        //display: none;
+      }
+    }
+  }
+}
+
+$fw-map: "100" 100, "200" 200, "300" 300, "400" 400, "500" 500, "600" 600,
+  "700" 700, "800" 800, "900" 900;
+
+@each $ss, $sw in $w-map {
+  @each $fwmk, $fwmv in $fw-map {
+    .fw-#{$ss}-#{$fwmk} {
+      @media (min-width: #{$sw}px) {
+        font-weight: #{$fwmv};
+        //display: none;
+      }
+    }
+  }
+}
+
+$container-width-map: "10" 10%, "20" 20%, "25" 25%, "30" 30%, "40" 40%, "50" 50%,
+  "60" 60%, "70" 70%, "75" 75%, "80" 80%, "90" 90%, "100" 100%;
+
+@each $ss, $sw in $w-map {
+  @each $cwmk, $cwmv in $container-width-map {
+    .cw-#{$ss}-#{$cwmk} {
+      @media (min-width: #{$sw}px) {
+        width: #{$cwmv};
+        //display: none;
       }
     }
   }
 }
 
 $fs-map: "0" 0rem, "025" 0.25rem, "05" 0.5rem, "075" 0.75rem, "1" 1rem,
-  "15" 1.5rem, "175" 1.75rem, "2" 2rem, "25" 2.5rem, "3" 3rem, "35" 3.5rem,
-  "4" 4rem, "45" 4.5rem, "5" 5rem, "6" 6rem, "7" 7rem, "8" 8rem, "9" 9rem,
-  "10" 10rem;
+  "125" 1.25rem, "15" 1.5rem, "175" 1.75rem, "2" 2rem, "25" 2.5rem, "3" 3rem,
+  "35" 3.5rem, "4" 4rem, "45" 4.5rem, "5" 5rem, "6" 6rem, "7" 7rem, "8" 8rem,
+  "9" 9rem, "10" 10rem "auto" auto;
 
 @each $ss, $sw in $w-map {
   $i: index(($w-map), ($ss $sw));
@@ -95,6 +143,12 @@ $fs-map: "0" 0rem, "025" 0.25rem, "05" 0.5rem, "075" 0.75rem, "1" 1rem,
     .mi-#{$ss}-#{$name} {
       @media (min-width: #{$sw}px) {
         margin-inline: #{$size};
+      }
+    }
+
+    .mt-#{$ss}-#{$name} {
+      @media (min-width: #{$sw}px) {
+        margin-top: #{$size};
       }
     }
   }

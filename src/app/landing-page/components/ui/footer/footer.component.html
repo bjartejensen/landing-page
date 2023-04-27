@@ -1,56 +1,34 @@
-<footer class="bg-neutral-900 text-neutral-100 padding-block-600">
-  <div class="container">
-    <div class="even-columns">
-      <div>
-        <a href="#"><img src="../assets/images/logo.svg" alt="" /></a>
-        <ul role="list" aria-label="social links">
-          <li class="flow">
-            <a aria-label="facebook" href="#"
-              ><img src="../assets/images/icon-facebook.svg" alt="facebook"
-            /></a>
-          </li>
-          <li class="flow">
-            <a aria-label="youtube" href="#"
-              ><img src="../assets/images/icon-youtube.svg" alt=""
-            /></a>
-          </li>
-          <li class="flow">
-            <a aria-label="twitter" href="#"
-              ><img src="../assets/images/icon-twitter.svg" alt=""
-            /></a>
-          </li>
-          <li class="flow">
-            <a aria-label="pinterest" href="#"
-              ><img src="../assets/images/icon-pinterest.svg" alt=""
-            /></a>
-          </li>
-          <li class="flow">
-            <a aria-label="instagram" href="#"
-              ><img src="../assets/images/icon-instagram.svg" alt=""
-            /></a>
-          </li>
-        </ul>
-      </div>
-      <div>
-        <nav class="footer-nav">
-          <ul aria-label="Footer">
-            <li class="flow"><a href="#">Home</a></li>
-            <li class="flow"><a href="#">Pricing</a></li>
-            <li class="flow"><a href="#">Products</a></li>
-            <li class="flow"><a href="#">About us</a></li>
-            <li class="flow"><a href="#">Careers</a></li>
-            <li class="flow"><a href="#">Community</a></li>
-            <li class="flow"><a href="#">Privacy Policy</a></li>
-          </ul>
-        </nav>
-      </div>
-      <div>
-        <form action="">
-          <input type="email" />
-          <button type="submit" class="button">Go</button>
-          <p>Copyright 2023. All rights reserved</p>
-        </form>
-      </div>
-    </div>
+<div class="container pb-md-5 mb-md-5 mi-md-3">
+  <div class="logo-wrapper">
+    <img
+      class="h-m-7 w-m-7 h-xl-10 w-xl-10"
+      src="../../../../../assets/atrib/landing/ATRIB LOGO.png"
+      alt=""
+    />
   </div>
-</footer>
+
+  <div class="navigation p-m-05 pi-m-075">
+    <h5 class="fs-m-1 fw-m-500 fs-sm-15 fw-sm-800">Navigation</h5>
+    <nav class="primary-navigation fs-lg-15" id="primary-navigation">
+      <ul role="list" class="gap-sm-2 gap-lg-3" aria-label="Primary">
+        <li
+          class="fs-m-075 fs-sm-1 mb-m-05 mb-lg-1 fs-lg-125"
+          *ngFor="let item of navItems.keys()"
+          (click)="selectedPageEmitter.emit(navItems.get(item))"
+        >
+          {{ item }}
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="about p-m-05">
+    <h5 class="fs-m-075 fs-m-1 fw-m-500 fs-sm-15 fw-sm-800">About</h5>
+    <ul>
+      <li class="fs-m-075 mb-m-05 fs-sm-1 mb-lg-1 fs-lg-125">
+        Terms of Service
+      </li>
+      <li class="fs-m-075 mb-m-05 fs-sm-1 mb-lg-1 fs-lg-125">Privacy Policy</li>
+    </ul>
+  </div>
+</div>

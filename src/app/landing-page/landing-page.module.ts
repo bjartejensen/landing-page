@@ -12,7 +12,10 @@ import { FooterComponent } from './components/ui/footer/footer.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MobileMenuComponent } from './components/ui/mobile-menu/mobile-menu.component';
+import { CardComponent } from './components/ui/card/card.component';
+import { TwoColsImgDirective } from './directives/two-cols-img.directive';
+import { ViewMaxWidthDirective } from './directives/view-max-width.directive';
+import { ScrollToSectionDirective } from './directives/scroll-to-section.directive';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { MobileMenuComponent } from './components/ui/mobile-menu/mobile-menu.com
     WhyComponent,
     HowComponent,
     FooterComponent,
-    MobileMenuComponent,
+    CardComponent,
+    TwoColsImgDirective,
+    ViewMaxWidthDirective,
+    ScrollToSectionDirective,
   ],
   imports: [
     CommonModule,

@@ -1,2 +1,8 @@
+@use "../../../../styles.scss" as scss;
 
-
+.global-container {
+  display: grid;
+  grid-template-columns: auto;
+  width: 100vw;
+  place-items: center center;
+}

@@ -1,11 +1,14 @@
 @use "../styles/fonts" as fonts;
 @use "../styles/colors" as colors;
+@use "../styles/mixins" as mix;
 
 @forward "../styles/fonts";
 @forward "../styles/colors";
 @forward "../styles/elements";
 @forward "../styles/_classes";
 @forward "../styles/_variables";
+@forward "../styles/palettes";
+@forward "../styles/mixins";
 
 //Andy Bells reset css
 // https://piccalil.li/blog/a-modern-css-reset
@@ -35,9 +38,14 @@ html:focus-within {
   scroll-behavior: smooth;
 }
 
+html {
+  @include mix.atrib-scrollbar();
+}
+
 html,
 body {
   height: 100%;
+  overflow-x: hidden;
 }
 
 /* Set core body defaults */

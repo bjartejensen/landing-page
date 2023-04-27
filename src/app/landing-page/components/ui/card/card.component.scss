@@ -1,0 +1,64 @@
+@use "../../../../../styles.scss" as scss;
+
+$br: 0.5rem;
+$border-clr: hsl(0, 0%, 80%);
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 2rem;
+
+  height: 450px;
+  width: 100%;
+  border-radius: $br;
+  box-shadow: 0px 0px 0.25rem 0px $border-clr;
+  color: scss.$atrib-text-color;
+
+  .image-section {
+    img {
+      //position: relative;
+      display: inline-block;
+      object-fit: contain;
+      max-width: 100%;
+      height: calc(500px * 0.5);
+      border-radius: $br;
+    }
+  }
+
+  .content-section {
+    z-index: 1000;
+    .header {
+      display: grid;
+      align-items: center;
+      z-index: 1000;
+      margin-top: 2rem;
+
+      h6 {
+        margin: 0%;
+        font-weight: 600;
+        font-size: 1.75rem;
+        line-height: 2rem;
+        letter-spacing: 1px;
+        text-align: center;
+      }
+    }
+
+    .details {
+      display: grid;
+      align-items: center;
+      justify-content: start;
+      margin: 1rem;
+
+      p {
+        font-weight: 400;
+        font-size: 1.25rem;
+        line-height: 1.5rem;
+        width: fit-content;
+        text-align: center;
+      }
+    }
+  }
+}

@@ -3,7 +3,12 @@ import {
   BreakpointObserver,
   Breakpoints,
 } from '@angular/cdk/layout';
-import { Component, inject, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  OnInit,
+} from '@angular/core';
 import { BehaviorSubject, Observable, map } from 'rxjs';
 
 export type TSelectedPage = 'home' | 'why' | 'how';
@@ -12,27 +17,47 @@ export type TSelectedPage = 'home' | 'why' | 'how';
   selector: 'app-frontpage',
   templateUrl: './frontpage.component.html',
   styleUrls: ['./frontpage.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FrontpageComponent {
+  //#region D.I.
+
   breakPointObserver = inject(BreakpointObserver);
-  isSmallScreen: boolean =
-    this.breakPointObserver.isMatched('(max-width: 599px)');
+
+  //#endregion
+
+  //#region Observables
 
   isSmallScreen$: Observable<boolean> = this.breakPointObserver
-    .observe(Breakpoints.XSmall)
+    .observe(['(max-width: 699px)'])
     .pipe(map((x) => x.matches));
 
   selectedPageSubject = new BehaviorSubject<TSelectedPage>('home');
   selectedPage$: Observable<TSelectedPage> =
     this.selectedPageSubject.asObservable();
 
+  //#endregion
+
+  //#region Helpers
+  mobileMenuActive: boolean = false;
+
+  menuItems = new Map<string, TSelectedPage>([
+    ['Home', 'home'],
+    ['Why', 'why'],
+    ['How', 'how'],
+  ]);
+
+  //#endregion
+
+  //#region Public Event handlers
+
   onPageSelected(selectedPage: TSelectedPage) {
     this.selectedPageSubject.next(selectedPage);
   }
 
-  activateMobileMenu: boolean = false;
-
-  onActivateMobileMenuChanged(shouldActivateMobileMenu: boolean) {
-    this.activateMobileMenu = shouldActivateMobileMenu;
+  onActivateMobileMenuChanged(mobileMenuActive: boolean) {
+    this.mobileMenuActive = mobileMenuActive;
   }
+
+  //#endregion
 }

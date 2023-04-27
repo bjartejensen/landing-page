@@ -1,36 +1,45 @@
 <ng-template #default>
-  <h6>Ups!</h6>
+  <h6>Ups! Something went wrong</h6>
 </ng-template>
 
-<app-header
-  [isSmallScreen]="isSmallScreen$ | async"
-  (selectedPageEmitter)="onPageSelected($event)"
-  (activateMobileMenuEmitter)="onActivateMobileMenuChanged($event)"
-></app-header>
+<div class="global-container" scrollToSection #scrollRef="scrollInstance">
+  <header appViewMaxWidth id="header">
+    <app-header
+      [navItems]="menuItems"
+      [mobileMenuActive]="mobileMenuActive"
+      [isSmallScreen]="isSmallScreen$ | async"
+      (activateMobileMenuEmitter)="onActivateMobileMenuChanged($event)"
+      (selectedPageEmitter)="onPageSelected($event)"
+    >
+    </app-header>
+  </header>
 
-<main>
-  <app-mobile-menu
-    *ngIf="activateMobileMenu"
-    (closeMobileMenuEmitter)="onActivateMobileMenuChanged($event)"
-  ></app-mobile-menu>
+  <main appViewMaxWidth class="mt-xl-4">
+    <ng-container [ngSwitch]="selectedPage$ | async">
+      <ng-container *ngSwitchCase="'home'">
+        <app-home></app-home>
+      </ng-container>
 
-  <ng-container [ngSwitch]="selectedPage$ | async">
-    <ng-container *ngSwitchCase="'home'">
-      <app-home></app-home>
+      <ng-container *ngSwitchCase="'why'">
+        <app-why></app-why>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="'how'">
+        <app-how></app-how>
+      </ng-container>
+
+      <ng-container *gSwitchDefault>
+        <h6>Upsi!</h6>
+      </ng-container>
     </ng-container>
+  </main>
 
-    <ng-container *ngSwitchCase="'why'">
-      <app-why></app-why>
-    </ng-container>
-
-    <ng-container *ngSwitchCase="'how'">
-      <app-how></app-how>
-    </ng-container>
-
-    <ng-container *gSwitchDefault>
-      <h6>Upsi!</h6>
-    </ng-container>
-  </ng-container>
-</main>
-
-<app-footer></app-footer>
+  <footer appViewMaxWidth>
+    <app-footer
+      [navItems]="menuItems"
+      (selectedPageEmitter)="
+        onPageSelected($event); scrollRef.scrollToTarget('header', true)
+      "
+    ></app-footer>
+  </footer>
+</div>
