@@ -1,7 +1,6 @@
 @use "../styles/_variables" as vars;
 @use "../styles/colors" as colors;
-
-//Generic classes
+@use "@angular/material" as mat;
 
 .two-columns {
   --first-col: 50%;
@@ -31,7 +30,8 @@
   border-radius: 100vmax;
   font-weight: 600;
   letter-spacing: 1px;
+  color: white;
   background-color: colors.$atrib-blue;
   border: 0.1px solid darken(colors.$atrib-blue, 5%);
-  box-shadow: 0px 0px 1.5px 0.1px colors.$atrib-blue;
+  @include mat.elevation(3, colors.$atrib-blue);
 }
