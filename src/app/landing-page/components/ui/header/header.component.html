@@ -21,9 +21,11 @@
 
   <div class="cta">
     <button
-      mat-button
       *ngIf="!isSmallScreen"
-      class="button mi-sm-3 fs-xl-15 h-xl-3 pi-xl-15"
+      mat-raised-button
+      [color]="'primary'"
+      appButton
+      class="mi-sm-2 mi-xl-3"
     >
       Login
     </button>

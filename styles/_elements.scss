@@ -25,12 +25,7 @@
 
 .button {
   display: block;
-  width: fit-content;
   border-radius: 100vmax;
   font-weight: 600;
   letter-spacing: 1px;
-  color: white;
-  background-color: colors.$atrib-blue;
-  border: 0.1px solid darken(colors.$atrib-blue, 5%);
-  @include mat.elevation(3, colors.$atrib-blue);
 }

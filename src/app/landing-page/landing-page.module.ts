@@ -16,6 +16,7 @@ import { CardComponent } from './components/ui/card/card.component';
 import { TwoColsImgDirective } from './directives/two-cols-img.directive';
 import { ViewMaxWidthDirective } from './directives/view-max-width.directive';
 import { ScrollToSectionDirective } from './directives/scroll-to-section.directive';
+import { ButtonDirective } from './directives/button.directive';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { ScrollToSectionDirective } from './directives/scroll-to-section.directi
     TwoColsImgDirective,
     ViewMaxWidthDirective,
     ScrollToSectionDirective,
+    ButtonDirective,
   ],
   imports: [
     CommonModule,

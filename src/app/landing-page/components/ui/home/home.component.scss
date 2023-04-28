@@ -25,7 +25,6 @@
 
   .content {
     display: grid;
-    //background-color: greenyellow;
 
     ul {
       display: grid;
@@ -41,8 +40,10 @@
   }
 
   .cta {
-    //position: relative;
     display: grid;
+    button {
+      color: white;
+    }
   }
 }
 
