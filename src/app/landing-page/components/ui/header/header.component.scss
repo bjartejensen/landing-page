@@ -9,6 +9,7 @@
   grid-template-columns: 1fr 1fr 1fr;
   justify-self: center;
   align-items: center;
+  border-bottom: rgb(184, 181, 181) 2px solid;
 
   @media (max-width: 699px) {
     grid-template-columns: 1fr 1fr;
@@ -18,7 +19,7 @@
 
 .logo-wrapper {
   display: grid;
-  place-items: center;
+  place-items: center start;
 
   @media (max-width: 699px) {
     background-color: scss.$atrib-blue;
@@ -32,7 +33,7 @@
 
 .navigation {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   width: 100%;
 
   ul {
@@ -43,6 +44,7 @@
 
     li {
       color: scss.$atrib-text-color;
+      font-family: scss.$conv-font;
       &:hover {
         cursor: pointer;
       }

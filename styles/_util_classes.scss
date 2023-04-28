@@ -73,7 +73,7 @@ $container-width-map: "10" 10%, "20" 20%, "25" 25%, "30" 30%, "40" 40%, "50" 50%
 $fs-map: "0" 0rem, "025" 0.25rem, "05" 0.5rem, "075" 0.75rem, "1" 1rem,
   "125" 1.25rem, "15" 1.5rem, "175" 1.75rem, "2" 2rem, "25" 2.5rem, "3" 3rem,
   "35" 3.5rem, "4" 4rem, "45" 4.5rem, "5" 5rem, "6" 6rem, "7" 7rem, "8" 8rem,
-  "9" 9rem, "10" 10rem "auto" auto;
+  "9" 9rem, "10" 10rem, "12" 12rem, "auto" auto;
 
 //Create utility class for all css properties that fits with font size types above
 @each $ss, $sw in $w-map {

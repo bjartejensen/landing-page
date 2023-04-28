@@ -1,16 +1,16 @@
 <div class="navigation-section">
-  <div class="logo-wrapper">
+  <div class="logo-wrapper pi-m-1 pi-sm-2">
     <img
-      class="h-m-7 w-m-7"
+      class="h-m-7 w-m-7 h-xl-8 w-xl-8"
       src="../../../../../assets/atrib/logo/ATRIB LOGO.png"
       alt=""
     />
   </div>
 
   <nav class="navigation" id="primary-navigation">
-    <ul role="list" class="jc-sm-center jc-lg-end" aria-label="Primary">
+    <ul role="list" class="jc-sm-center" aria-label="Primary">
       <li
-        class="mi-m-1 pi-md-0 pi-lg-1 fs-sm-125 fw-md-600 fs-sm-15 fw-sm-500"
+        class="mi-m-1 fs-m-1 fs-sm-125 fw-sm-500 pi-md-0 fw-md-600 pi-lg-1"
         *ngFor="let item of navItems.keys()"
         (click)="selectedPageEmitter.emit(navItems.get(item))"
       >
@@ -25,7 +25,7 @@
       mat-raised-button
       [color]="'primary'"
       appButton
-      class="mi-sm-2 mi-xl-3"
+      class="mi-sm-2"
     >
       Login
     </button>
