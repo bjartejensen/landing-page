@@ -1,29 +1,48 @@
-# AtribLandingPage
+# Building a Reponsive landing page with Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.5.
+Building a responsive website can be a challenging task. However, users expects every format - from mobile to large screen - to be supported. And the better we as front-end developers do it, the more trust we build with your user. So let's dive into my approach.
 
-## Development server
+## The challange
 
-![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](https://atrib-landing-page.netlify.app/assets/readme/carbon.png)
+The easiest way to get around build a responsive website, if one was equipped with one tool, is by use of css media queries.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Media queries are as such benign, but they may compromise readability of your css. I often get lost in managing and maintaining media queries across classes and components.
 
-## Code scaffolding
+To alleviate this, an adequate use of CSS grid (especially with grid area) may reduce the need for media queries at a structural level. I tend to apply `display: grid` a the top level of a component, that is supposed to be modified across screen sizes, to ease the render modifications across screens.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+But there is more we can do.
 
-## Build
+## The Angular ingredients
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Two concepts in Angular enhances responsiveness:
 
-## Running unit tests
+- scss
+- attribute directives
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### scss
 
-## Running end-to-end tests
+[Scss is css with super powers] (https://github.com/angular/angular-cli)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Scss is a css extention that allows one to use variables, mixins, functions, loop-logic etc.
 
-## Further help
+With respect to responsiveness I use scss to write utility classes that combines very screen size with very element in a pre-defined set of property values. Let take an example.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Suppose you are able to generate a utility class that allow you to set a certain `font-weight` associated with a certain screen size. So that applying this utility class, say, `fw-md-400`, you set a `font-weight: 400` for screen sizes of `md` (medium) and above. Scss allows us to do that efficiently across font-weights and screen sizes. Take a look at this snippet:
+
+![Here we loop over six different screen sizes and nine different font-weights](https://atrib-landing-page.netlify.app/assets/readme/carbon.png)
+
+Applying the utility classes on html elements is then done like this:
+
+![Applying utility classes on html elements](https://atrib-landing-page.netlify.app/assets/readme/carbon.png)
+
+### Angular Directives
+
+As you can see, the class list may seem extensive if multiple properties is modified across screen sizes. And this may too require cumbersome maintainance if you have several html elements using the same class list. This is where Angular Attribute Directives enters the game.
+
+Attribute directives in Angular allows you to fix a class list to an html element via the `@Hostbinding` decorator. So if I have several instances of an html element with the same extensive class list attached, I can just associate the elements to the attribute directive that binds to the class list.
+
+![Show the @hostbinding here](https://atrib-landing-page.netlify.app/assets/readme/carbon.png)
+
+Thus, any change/adjustments in the class list will propagate immidiately to all elements with the directive associated to it.
+
+In my opinion an added benefit to this approach is that it will encourage you, as a developer, to think in terms of structural layouts and reusability in design. A mindset buys me confidens, reliability and robustness in the responsive design process. However, maybe that the cost of full flexibility.
