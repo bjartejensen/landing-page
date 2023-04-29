@@ -17,7 +17,8 @@
   <main appViewMaxWidth class="mt-xl-4">
     <ng-container [ngSwitch]="selectedPage$ | async">
       <ng-container *ngSwitchCase="'home'">
-        <app-home></app-home>
+        <!-- <app-home></app-home> -->
+        <app-intro></app-intro>
       </ng-container>
 
       <ng-container *ngSwitchCase="'why'">

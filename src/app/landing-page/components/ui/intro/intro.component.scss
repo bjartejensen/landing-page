@@ -1,0 +1,241 @@
+@use "../../../../../styles.scss" as scss;
+
+@mixin section-text-clr() {
+  color: white;
+}
+
+@mixin header() {
+  @include section-text-clr();
+  font-weight: 800;
+  font-family: scss.$special-font;
+}
+
+@mixin desc() {
+  @include section-text-clr();
+  font-weight: 300;
+  font-family: scss.$conv-font;
+}
+
+@mixin section() {
+  gap: 1rem;
+  border-radius: 0.25rem;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-areas:
+    "header header"
+    "lightgreen green"
+    "lightgreen yellow"
+    "turqoise turqoise";
+  height: 100%;
+  min-height: 80vh;
+  max-width: 1500px;
+  margin-inline: auto;
+
+  @media (max-width: 699px) {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "lightgreen"
+      "green"
+      "yellow"
+      "turqoise";
+  }
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  grid-area: header;
+
+  h1 {
+    color: map-get(scss.$atrib-palette-primary, 800);
+    text-align: center;
+  }
+}
+
+.lightgreen {
+  @include section();
+  display: grid;
+
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-area: lightgreen;
+  background-color: map-get(scss.$atrib-palette-primary, 500);
+
+  h4 {
+    @include header();
+  }
+  p {
+    @include desc();
+  }
+
+  .img-section {
+    display: grid;
+    place-items: center center;
+
+    img {
+      display: inline-block;
+      object-fit: contain;
+      transform: scale(3);
+
+      @media (max-width: 699px) {
+        transform: scale(3);
+      }
+    }
+  }
+}
+
+.green {
+  grid-area: green;
+  background-color: map-get(scss.$atrib-palette-primary, 900);
+  @include section();
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  @media (max-width: 699px) {
+    grid-template-columns: 1fr;
+  }
+
+  h4 {
+    @include header();
+    grid-column: span 1;
+    grid-row: 1;
+  }
+  p {
+    @include desc();
+    grid-column: 1 / 2;
+    grid-row: 2;
+  }
+
+  .img-section {
+    display: grid;
+    place-items: center center;
+    grid-column: 2 / 3;
+    grid-row: span 2;
+
+    @media (max-width: 699px) {
+      grid-column: 1;
+      grid-row: span 1;
+    }
+
+    img {
+      display: inline-block;
+      object-fit: contain;
+      transform: scale(3);
+
+      @media (max-width: 699px) {
+        transform: scale(3);
+      }
+    }
+  }
+}
+
+.yellow {
+  @include section();
+  display: grid;
+  grid-area: yellow;
+  background-color: map-get(scss.$atrib-palette-primary, 50);
+  grid-template-columns: repeat(2, 1fr);
+
+  @media (max-width: 699px) {
+    grid-template-columns: 1fr;
+  }
+
+  h4 {
+    @include header();
+    color: scss.$atrib-text-color;
+    grid-column: span 1;
+    grid-row: 1;
+  }
+  p {
+    @include desc();
+    color: scss.$atrib-text-color;
+    font-weight: 400;
+    grid-column: 1 / 2;
+    grid-row: 2;
+  }
+
+  .img-section {
+    display: grid;
+    place-items: center center;
+    grid-column: 2 / 3;
+    grid-row: span 2;
+
+    @media (max-width: 699px) {
+      grid-column: 1;
+      grid-row: span 1;
+    }
+
+    img {
+      display: inline-block;
+      object-fit: contain;
+      transform: scale(5);
+
+      @media (max-width: 699px) {
+        transform: scale(3);
+      }
+    }
+  }
+}
+
+.turqoise {
+  @include section();
+  display: grid;
+  grid-area: turqoise;
+  background-color: map-get(scss.$atrib-palette-primary, 200);
+  grid-template-columns: repeat(2, 1fr);
+
+  @media (max-width: 699px) {
+    grid-template-columns: 1fr;
+  }
+
+  h4 {
+    @include header();
+    color: scss.$atrib-text-color;
+    grid-column: span 1;
+    grid-row: 1;
+  }
+  p {
+    @include desc();
+    color: scss.$atrib-text-color;
+    font-weight: 400;
+    grid-column: 1 / 2;
+    grid-row: 2;
+  }
+
+  .img-section {
+    display: grid;
+    place-items: center center;
+    grid-column: 2 / 3;
+    grid-row: span 2;
+
+    @media (max-width: 699px) {
+      grid-column: 1;
+      grid-row: span 1;
+    }
+
+    img {
+      display: inline-block;
+      object-fit: contain;
+      transform: scale(5);
+
+      @media (max-width: 699px) {
+        transform: scale(3);
+      }
+    }
+  }
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-rows: minmax(calc(175px + 2 * 1rem), auto);
+  justify-content: center;
+  align-items: center;
+}

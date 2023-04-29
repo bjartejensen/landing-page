@@ -17,6 +17,8 @@ import { TwoColsImgDirective } from './directives/two-cols-img.directive';
 import { ViewMaxWidthDirective } from './directives/view-max-width.directive';
 import { ScrollToSectionDirective } from './directives/scroll-to-section.directive';
 import { ButtonDirective } from './directives/button.directive';
+import { IntroComponent } from './components/ui/intro/intro.component';
+import { IntroSectionDirective } from './directives/intro-section.directive';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { ButtonDirective } from './directives/button.directive';
     ViewMaxWidthDirective,
     ScrollToSectionDirective,
     ButtonDirective,
+    IntroComponent,
+    IntroSectionDirective,
   ],
   imports: [
     CommonModule,
