@@ -45,4 +45,24 @@ Attribute directives in Angular allows you to fix a class list to an html elemen
 
 Thus, any change/adjustments in the class list will propagate immidiately to all elements with the directive associated to it.
 
-In my opinion an added benefit to this approach is that it will encourage you, as a developer, to think in terms of structural layouts and reusability in design. A mindset buys me confidens, reliability and robustness in the responsive design process. However, maybe that the cost of full flexibility.
+In my opinion an added benefit to this approach is that it will encourage you, as a developer, to think in terms of structural layouts and reusability in design. A mindset buys me confidens, reliability and robustness in the responsive design process. However, maybe that the cost of full flexibility in design and being an economist by education this was never binding restriction for me.
+
+### A Third Angular Feature to Support Responsiveness
+
+We often encounter situations where we truncate width of our containers in case of wide screens - too much space to be used meaningfully. It common practise to enforce this truncation via `max-width` on our containers.
+
+But as Angular encourage splitting code into constituent components, securing identical `max-width` across the component tree involves maintainance too.
+
+In order to align `max-width` across the component tree, I grew fond of using Angular's Dependency Injection mechanism to inject a centralised configuration object into an over-arching directive which I in turn bind to all elements where the global `max-width` applies.
+
+It looks like this:
+
+![Show the use of DI in config max-width](https://atrib-landing-page.netlify.app/assets/readme/carbon.png)
+
+## Conclusion
+
+Angular greatly simplifies implementation of responsive design via:
+
+- Scss
+- Attribute Directives
+- (Dependency Injection)
