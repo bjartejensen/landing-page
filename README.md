@@ -33,7 +33,7 @@ Suppose you are able to generate a utility class that allow you to set a certain
 
 Applying the utility classes on html elements is then done like this:
 
-![Applying utility classes on html elements](https://atrib-landing-page.netlify.app/assets/readme/carbon.png)
+![Applying utility classes on html elements](https://atrib-landing-page.netlify.app/assets/readme/html.png)
 
 ### Angular Directives
 
@@ -41,7 +41,7 @@ As you can see, the class list may seem extensive if multiple properties is modi
 
 Attribute directives in Angular allows you to fix a class list to an html element via the `@Hostbinding` decorator. So if I have several instances of an html element with the same extensive class list attached, I can just associate the elements to the attribute directive that binds to the class list.
 
-![Show the @hostbinding here](https://atrib-landing-page.netlify.app/assets/readme/carbon.png)
+![Show the @hostbinding here](https://atrib-landing-page.netlify.app/assets/readme/hostbinding.png)
 
 Thus, any change/adjustments in the class list will propagate immidiately to all elements with the directive associated to it.
 
@@ -57,7 +57,7 @@ In order to align `max-width` across the component tree, I grew fond of using An
 
 It looks like this:
 
-![Show the use of DI in config max-width](https://atrib-landing-page.netlify.app/assets/readme/carbon.png)
+![Show the use of DI in config max-width](https://atrib-landing-page.netlify.app/assets/readme/DI.png)
 
 ## Conclusion
 
