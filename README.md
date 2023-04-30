@@ -24,9 +24,7 @@ Thress concepts in Angular greatly enhances responsiveness:
 
 ### Scss
 
-[Scss is css with super powers](https://sass-lang.com/)
-
-Scss is a css extention that allows one to use variables, mixins, functions, loop-logic etc.
+[Scss is css with super powers](https://sass-lang.com/) that allows one to use variables, mixins, functions, loop-logic etc.
 
 With respect to responsiveness, I use scss to write utility classes that combines every screen size with every element in a pre-defined set of property values. Let take an example.
 
