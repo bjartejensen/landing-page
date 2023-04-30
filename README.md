@@ -1,10 +1,10 @@
-# Building a Reponsive landing page with Angular
+# Building a Reponsive Landing Page with Angular
 
 Building a responsive website can be a challenging task. Users expects every format - from mobile to large screens - to be supported. And the better we are able to execute on responsiveness, the more trust we build with your users. So let's dive into my approach to responsiveness of this simple landing page:
 
 [Website](https://atrib-landing-page.netlify.app)
 
-## The challange
+## The Challange
 
 The easiest way to get around building a responsive website is by use of css media queries. One efficient tool.
 
@@ -14,13 +14,13 @@ To alleviate this, an adequate use of CSS grid (especially with grid area) is a 
 
 But there is more we can do.
 
-## The Angular ingredients
+## The Role of Angular
 
 Three concepts in Angular further enhances responsiveness:
 
-- Use of **SCSS**
-- Use of Angular **Attribute Directives**
-- Use of Angular **Dependency Injection**
+- **SCSS**
+- **Attribute Directives**
+- **Dependency Injection**
 
 ### SCSS
 
@@ -66,4 +66,8 @@ Angular greatly simplifies implementation of responsive design by use of:
 - Directives
 - Dependency Injection
 
-These three features will help you build responsive design in a controlled, maintainable and fun way.
+These three features will help you build responsive design in a maintainable and fun way, by allowing you to...:
+
+- Create resuable SCSS utility classes
+- Create attribute directives that simplifies class list maintainance
+- Inject configuration objects to centralise dimension alignment at a global level
