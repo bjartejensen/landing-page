@@ -18,11 +18,11 @@ But there is more we can do.
 
 Thress concepts in Angular greatly enhances responsiveness:
 
-- scss
-- attribute directives
-- dependency injection mechanism
+- Scss
+- Angular Directives
+- Angular Dependency Injection
 
-### scss
+### Scss
 
 [Scss is css with super powers] (https://sass-lang.com/)
 
@@ -44,7 +44,7 @@ Thus, any change/adjustments in the class list will propagate immidiately to all
 
 In my opinion an added benefit to this approach is that it will encourage you, as a developer, to think in terms of structural layouts and reusability in design. A mindset that buys me confidens in the responsive design process. However, maybe that the cost of full flexibility in design.
 
-### A Third Angular Feature to Support Responsiveness
+### Angular Dependency Injection
 
 We often encounter situations where we truncate width of our containers in case of wide screens - too much space to be used meaningfully. It common practise to enforce this truncation via `max-width` on our containers.
 
@@ -56,8 +56,10 @@ In order to align `max-width` across the component tree, I use Angular's Depende
 
 ## Conclusion
 
-Angular greatly simplifies implementation of responsive design via:
+Angular greatly simplifies implementation of responsive design by use of:
 
 - Scss
-- Attribute Directives
+- Directives
 - Dependency Injection
+
+These feature will help you build responsive design in a maintainable way.
