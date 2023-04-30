@@ -1,3 +1,4 @@
+@use "@angular/material" as mat;
 @use "../../../../../styles.scss" as scss;
 
 @mixin section-text-clr() {
@@ -51,9 +52,11 @@
   justify-content: center;
   align-items: center;
   grid-area: header;
+  background: linear-gradient(90deg, hsl(0, 0%, 65%) 0%, hsl(0, 0%, 70%) 100%);
 
   h1 {
     color: map-get(scss.$atrib-palette-primary, 800);
+    color: scss.$dark-text; //hsl(0, 0%, 40%);
     text-align: center;
   }
 }
@@ -67,25 +70,52 @@
   grid-area: lightgreen;
   background-color: map-get(scss.$atrib-palette-primary, 500);
 
+  background: linear-gradient(
+    90deg,
+    map-get(scss.$atrib-palette-primary, 500) 0%,
+    map-get(scss.$atrib-palette-primary, 700) 100%
+  );
+
   h4 {
     @include header();
   }
-  p {
-    @include desc();
+
+  span {
+    color: map-get(scss.$atrib-palette-primary, 600);
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    ul {
+      list-style: none;
+      padding-inline: 0.5rem;
+      padding-block: 1rem;
+
+      li {
+        font-style: italic;
+        margin-block: 1rem;
+
+        &:nth-child(2) {
+          color: map-get(scss.$atrib-palette-primary, 600);
+        }
+      }
+    }
+
+    p {
+      @include desc();
+      font-weight: 400;
+    }
   }
 
   .img-section {
     display: grid;
     place-items: center center;
 
-    img {
-      display: inline-block;
-      object-fit: contain;
-      transform: scale(3);
-
-      @media (max-width: 699px) {
-        transform: scale(3);
-      }
+    button {
+      border: map-get(scss.$atrib-palette-primary, 200) solid 2px;
     }
   }
 }
@@ -93,6 +123,11 @@
 .green {
   grid-area: green;
   background-color: map-get(scss.$atrib-palette-primary, 900);
+  background: linear-gradient(
+    90deg,
+    map-get(scss.$atrib-palette-accent, 800) 0%,
+    map-get(scss.$atrib-palette-accent, 200) 100%
+  );
   @include section();
   display: grid;
 
@@ -104,6 +139,7 @@
 
   h4 {
     @include header();
+    //color: map-get(scss.$atrib-palette-accent, 800);
     grid-column: span 1;
     grid-row: 1;
   }
@@ -127,7 +163,7 @@
     img {
       display: inline-block;
       object-fit: contain;
-      transform: scale(3);
+      transform: scale(5);
 
       @media (max-width: 699px) {
         transform: scale(3);
@@ -141,6 +177,11 @@
   display: grid;
   grid-area: yellow;
   background-color: map-get(scss.$atrib-palette-primary, 50);
+  background: linear-gradient(
+    90deg,
+    map-get(scss.$atrib-palette-primary, 100) 0%,
+    map-get(scss.$atrib-palette-primary, 200) 100%
+  );
   grid-template-columns: repeat(2, 1fr);
 
   @media (max-width: 699px) {
@@ -149,13 +190,13 @@
 
   h4 {
     @include header();
-    color: scss.$atrib-text-color;
+    color: map-get(scss.$atrib-palette-primary, 900);
     grid-column: span 1;
     grid-row: 1;
   }
   p {
     @include desc();
-    color: scss.$atrib-text-color;
+    color: map-get(scss.$atrib-palette-primary, 900);
     font-weight: 400;
     grid-column: 1 / 2;
     grid-row: 2;
@@ -189,7 +230,12 @@
   display: grid;
   grid-area: turqoise;
   background-color: map-get(scss.$atrib-palette-primary, 200);
-  grid-template-columns: repeat(2, 1fr);
+  background: linear-gradient(
+    90deg,
+    map-get(scss.$atrib-palette-accent, 100) 0%,
+    map-get(scss.$atrib-palette-accent, 300) 100%
+  );
+  grid-template-columns: 2fr 1fr;
 
   @media (max-width: 699px) {
     grid-template-columns: 1fr;
@@ -197,13 +243,13 @@
 
   h4 {
     @include header();
-    color: scss.$atrib-text-color;
+    color: scss.$dark-text;
     grid-column: span 1;
     grid-row: 1;
   }
   p {
     @include desc();
-    color: scss.$atrib-text-color;
+    color: scss.$dark-text;
     font-weight: 400;
     grid-column: 1 / 2;
     grid-row: 2;
@@ -224,6 +270,7 @@
       display: inline-block;
       object-fit: contain;
       transform: scale(5);
+      margin-left: 4rem;
 
       @media (max-width: 699px) {
         transform: scale(3);

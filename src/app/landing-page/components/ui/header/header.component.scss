@@ -44,7 +44,8 @@
 
     li {
       color: scss.$atrib-text-color;
-      font-family: scss.$conv-font;
+      color: scss.$dark-text;
+      font-family: scss.$special-font;
       &:hover {
         cursor: pointer;
       }

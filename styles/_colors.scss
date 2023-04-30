@@ -15,3 +15,4 @@ $atrib-background-color: map-get(
 );
 
 $atrib-text-color: map-get(map-get(theme.$atrib-light-theme, foreground), text);
+$dark-text: hsl(240, 25%, 25%);
