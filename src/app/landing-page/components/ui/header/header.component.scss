@@ -21,10 +21,6 @@
   display: grid;
   place-items: center start;
 
-  @media (max-width: 699px) {
-    background-color: scss.$atrib-blue;
-  }
-
   img {
     display: inline-block;
     object-fit: contain;
