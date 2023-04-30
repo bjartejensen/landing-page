@@ -2,7 +2,7 @@
 
 Building a responsive website can be a challenging task. However, users expects every format - from mobile to large screen - to be supported. And the better we as front-end developers do it, the more trust we build with your user. So let's dive into my approach when implementing this landing page:
 
-(https://atrib-landing-page.netlify.app)
+[Website](https://atrib-landing-page.netlify.app)
 
 ## The challange
 
@@ -24,7 +24,7 @@ Thress concepts in Angular greatly enhances responsiveness:
 
 ### Scss
 
-[Scss is css with super powers] (https://sass-lang.com/)
+[Scss is css with super powers](https://sass-lang.com/)
 
 Scss is a css extention that allows one to use variables, mixins, functions, loop-logic etc.
 
