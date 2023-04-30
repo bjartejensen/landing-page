@@ -41,19 +41,20 @@ Then all we need is to tag our elements with classes that captures the required 
 
 Class list on elements may grown if multiple properties is modified across screen sizes. And this may too require cumbersome maintainance if you have several html elements using the same class list. This is where Angular Attribute Directives enters the game.
 
-Attribute directives in Angular allows you to fix a class list to an html element via the `@Hostbinding()` decorator. We can then reuse the class list defined in the directive if we have several instances of an html element with the same rendering. I simply just tag the directive to the elements in order to bind to the class list.
+Attribute directives in Angular allows you to fix a class list to an html element via the `@Hostbinding()` decorator. We can then reuse the class list defined in the directive if we have several instances of an html element with the same rendering. Just tag the directive to the elements in order to bind to the class list.
 
-Thus, any change/adjustments in the class list will propagate immidiately to all elements with the directive tagged to it.
+From then on any change in the class list will propagate immidiately to all elements with the directive tagged to it.
 
-In my opinion an added benefit to this approach is that it will encourage you, as a developer, to think in terms of structural layouts and reusability in design. A mindset that buys me confidens in the responsive design process. However, maybe that the cost of full flexibility in design.
+In my opinion an added benefit to this approach is that it will encourage you, as a developer, to think in terms of structural layouts and reusability in design. A mindset that buys me confidens in the responsive design process.
 
 ### Angular Dependency Injection
 
-We often encounter situations where we truncate width of our containers in case of wide screens - too much space to be used meaningfully. It common practise to enforce this truncation via `max-width` on our containers.
+We often encounter situations where we truncate `width` of our containers in case of very wide screens. Too much space is hard to use meaningfully and we want to reduce the number of screen size breaks.
 
+It common practise to enforce this truncation via `max-width` on our containers.
 But as Angular encourage splitting code into constituent components, securing identical `max-width` across the component tree involves maintainance too.
 
-In order to align `max-width` across the component tree, I use Angular's Dependency Injection mechanism to inject a centralised configuration object into an over-arching directive. In turn this directive is tagged to all elements where the global `max-width` applies.
+In order to align `max-width` across the component tree, I use Angular's Dependency Injection mechanism to inject a centralised configuration object into an over-arching directive. The configuration object live at the global level and is injected and applied on all elements where the global `max-width` applies.
 
 ![Show the use of DI in config max-width](https://atrib-landing-page.netlify.app/assets/readme/DI.png)
 
@@ -61,8 +62,8 @@ In order to align `max-width` across the component tree, I use Angular's Depende
 
 Angular greatly simplifies implementation of responsive design by use of:
 
-- Scss
+- SCSS
 - Directives
 - Dependency Injection
 
-These feature will help you build responsive design in a maintainable way.
+These three features will help you build responsive design in a controlled, maintainable and fun way.
