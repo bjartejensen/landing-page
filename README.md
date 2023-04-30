@@ -18,9 +18,9 @@ But there is more we can do.
 
 Three concepts in Angular further enhances responsiveness:
 
-- **SCSS**
-- **Attribute Directives**
-- **Dependency Injection**
+- SCSS
+- Attribute Directives
+- Dependency Injection
 
 ### SCSS
 
@@ -66,7 +66,7 @@ Angular greatly simplifies implementation of responsive design by use of:
 - Directives
 - Dependency Injection
 
-These three features will help you build responsive design in a maintainable and fun way, by allowing you to...:
+These three features will help you build responsive design in a maintainable and fun way, by allowing you to:
 
 - Create resuable SCSS utility classes
 - Create attribute directives that simplifies class list maintainance
