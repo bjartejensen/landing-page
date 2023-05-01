@@ -36,7 +36,7 @@ Here we loop over six breaks in screen sizes to potentially set a different `fon
 
 ### Angular Directives
 
-Class list on elements may grown if multiple properties are modified across screen sizes. And this may too require cumbersome maintainance if you have several html elements using the same class list. This is where Angular Attribute directives enters the game.
+The class list on elements may grown if multiple properties are modified across screen sizes. This may too require cumbersome maintainance if you have several html elements using the same class list and decide to modify a specific display property. This is where Angular Attribute directives enters the game.
 
 Attribute directives in Angular allows you to fix a class list to an html element via the `@Hostbinding()` decorator. We can then reuse the class list defined in the directive if we have several instances of an html element with the same rendering. Just tag the directive to the elements in order to bind to the class list.
 
