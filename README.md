@@ -10,7 +10,7 @@ The easiest way to get around building a responsive website is by use of css med
 
 Media queries are benign, but they may compromise readability of your css over time. I often get lost in managing and maintaining media queries across classes and components as my layout expands.
 
-To alleviate this, an adequate use of CSS grid (especially with grid area) is a fast way to reduce the number of media queries need. I tend to apply `display: grid` a the top level of a component which is supposed to be modified across screen sizes.
+To alleviate this, an adequate use of CSS grid (especially with grid area) is a fast way to reduce the number of media queries needed. I tend to apply `display: grid` a the top level of a component which is supposed to be modified across screen sizes.
 
 But there is more we can do.
 
@@ -30,7 +30,7 @@ With respect to responsiveness, I use SCSS to write utility classes that combine
 
 Suppose you are able to generate a utility class that allow you to set a certain `font-weight` when the screen size is within a specific range. So that when applying this utility class, say, `fw-md-400`, you set a `font-weight: 400` for screen sizes of `md` (medium) and above.
 
-Scss allows us to do that efficiently across font-weights and screen sizes. Take a look at this snippet:
+SCSS allows us to do that efficiently across font-weights and screen sizes. Take a look at this snippet:
 
 ![Here we loop over six different screen sizes and nine different font-weights](https://atrib-landing-page.netlify.app/assets/readme/scss.png)
 
