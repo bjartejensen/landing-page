@@ -22,7 +22,7 @@ Three concepts in Angular further supports responsiveness:
 
 ### SCSS
 
-[SCSS is CSS with super powers](https://sass-lang.com/). It allows you to define variables, mixins, functions, loop in order to write proper CSS logic that simplifies CSS at the component level.
+[SCSS is CSS with super powers](https://sass-lang.com/). It allows you to define variables, mixins, functions, loops, etc. in order to write proper CSS logic simplifying the CSS at the component level.
 
 With respect to responsiveness, I specifically use SCSS to write utility classes that combines every screen size with every element over a pre-defined set of property values. Let take an example.
 
