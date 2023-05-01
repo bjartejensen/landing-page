@@ -54,7 +54,7 @@ In order to align `max-width` across the component tree, I use Angular's Depende
 
 ![Show the use of DI in config max-width](https://atrib-landing-page.netlify.app/assets/readme/DI.png)
 
-Alternatively, one could define the `max-width` in your root style, but I prefere the directive solution, because of its closer attachment to the component being 'max-width'ed. Thus, enhancening readibility of code and maintainance.
+Alternatively, one could define the `max-width` in the root style, or in a `@mixin`, but I prefere the directive solution, because of its closer attachment to the component being 'max-width'ed. Thus, enhancening readibility of code and maintainance.
 
 ## Conclusion
 
