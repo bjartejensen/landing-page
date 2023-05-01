@@ -32,7 +32,7 @@ Take a look at this snippet:
 
 ![Here we loop over six different screen sizes and nine different font-weights](https://atrib-landing-page.netlify.app/assets/readme/scss.png)
 
-Here we loop over six breaks in screen sizes to potentially set a different `font-size` for six different screens. All we need is to tag our elements with classes that captures the required style/screen size combination. And like that, you are able to control CSS properties `font-size`, `padding`, `margin`, etc. across screen sizes.
+Here we loop over six breaks in screen sizes to potentially set a different `font-size` for six different screens. All we need is to tag our elements with classes that captures the required style/screen size combination. And like that, you are able to control CSS properties `font-size`, `padding`, `margin`, etc. across screen sizes. In the HTML-template, not the CSS. That's the advantage. The utility class has taken over the responsibility of the media query.
 
 ### Angular Directives
 
