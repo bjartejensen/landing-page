@@ -4,9 +4,9 @@ Building a responsive website can be a challenging task. Users expects every for
 
 ## The Challange
 
-The easiest way to get around building a responsive website is by use of css media queries. One efficient tool.
+The easiest way to get around building a responsive website is by use of CSS media queries. One efficient tool.
 
-Media queries are benign and definitely have a place in any responsive style sheet. But they may compromise readability of your css over time. I often get lost in managing and maintaining media queries across classes and components as my layout expands.
+Media queries are benign and definitely have a place in any responsive style sheet. But they may compromise readability of the CSS over time. I often get lost in managing and maintaining media queries across classes and components as my layout expands and complexity increases.
 
 To alleviate this, an adequate use of CSS grid (especially with grid area) is a fast way to reduce the number of media queries required. I tend to apply `display: grid` a the top most level in the component tree that is modified when screen size changes.
 
