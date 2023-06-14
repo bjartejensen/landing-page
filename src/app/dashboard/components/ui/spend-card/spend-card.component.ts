@@ -22,7 +22,6 @@ export class SpendCardComponent {
     { name: 'Social', allocation: '7.8M', percent: 0.12 },
     { name: 'Affiliates', allocation: '17.9M', percent: 0.28 },
     { name: 'Tv', allocation: '10.4M', percent: 0.16 },
-    { name: 'Affiliates', allocation: '17.9M', percent: 0.28 },
     { name: 'Radio', allocation: '2.9M', percent: 0.04 },
     { name: 'Other', allocation: '2.9M', percent: 0.04 },
     { name: 'Total', allocation: '65.0M', percent: 1.0 },

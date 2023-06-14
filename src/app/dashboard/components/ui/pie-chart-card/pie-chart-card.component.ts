@@ -31,11 +31,12 @@ export class PieChartCardComponent implements OnInit {
       chart: {
         type: 'donut',
         width: '100%',
-        height: 100,
+        //height: 100,
         sparkline: {
           enabled: true,
         },
       },
+      responsive: [{ breakpoint: 1700, options: { height: 400 } }],
       fill: {
         colors: [
           'hsl(102, 52%, 94%)',

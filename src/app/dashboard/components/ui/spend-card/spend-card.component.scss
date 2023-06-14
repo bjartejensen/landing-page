@@ -10,6 +10,7 @@
   display: flex;
   width: 100%;
   justify-content: space-evenly;
+  border-bottom: 1px white dashed;
 
   > * {
     flex: 1 1 100%;
@@ -24,6 +25,17 @@
 .table-row {
   display: flex;
   width: 100%;
+
+  &:first-child {
+    margin-top: 1rem;
+  }
+
+  &:last-child {
+    margin-top: 1rem;
+    padding-block: 0.25rem;
+    border-top: 1px white dashed;
+    border-bottom: 1px white dashed;
+  }
 }
 
 .table-data {
@@ -46,6 +58,6 @@
 
 .table-data {
   font-family: scss.$special-font;
-  font-size: 0.75rem;
+  //font-size: 0.75rem;
   font-weight: 500;
 }
