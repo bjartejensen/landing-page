@@ -1,0 +1,60 @@
+<div class="global-container">
+  <div
+    class="dashboard"
+    cdkOverlayOrigin
+    #trigger="cdkOverlayOrigin"
+    appMaxWidth
+  >
+    <div class="header">
+      <h2>MMM Report</h2>
+    </div>
+
+    <div class="mix" (click)="isOpen = !isOpen">
+      <app-chart-card *ngIf="true" title="Optimal Mix">
+        <app-pie-chart-card class="chart"></app-pie-chart-card>
+      </app-chart-card>
+    </div>
+    <div class="cpa">
+      <app-chart-card (click)="isOpen = !isOpen" title="Cost Per Aquisition">
+        <app-bar-chart-card class="chart"></app-bar-chart-card>
+      </app-chart-card>
+    </div>
+    <div class="drivers" (click)="isOpen = !isOpen">
+      <app-chart-card *ngIf="true" title="Aquisition Drivers">
+        <app-area-chart-card class="chart"></app-area-chart-card>
+      </app-chart-card>
+    </div>
+    <div class="data-chart">
+      <app-chart-card (click)="isOpen = !isOpen" title="Predictions">
+        <app-line-chart-card class="chart"></app-line-chart-card>
+      </app-chart-card>
+    </div>
+    <div class="data-tabel" (click)="isOpen = !isOpen">
+      <app-data-table-card></app-data-table-card>
+    </div>
+    <div class="spend-tabel" (click)="isOpen = !isOpen">
+      <app-spend-card></app-spend-card>
+    </div>
+  </div>
+</div>
+
+<ng-template
+  cdkConnectedOverlay
+  [cdkConnectedOverlayOrigin]="trigger"
+  [cdkConnectedOverlayOpen]="isOpen"
+  disableClose="false"
+  cdkConnectedOverlayHasBackdrop="true"
+  (backdropClick)="isOpen = false"
+  [cdkConnectedOverlayPositions]="[
+    {
+      overlayX: 'center',
+      overlayY: 'center',
+      originX: 'center',
+      originY: 'center'
+    }
+  ]"
+>
+  <app-modal-wrapper>
+    <h2>This is the component to be shown</h2>
+  </app-modal-wrapper>
+</ng-template>

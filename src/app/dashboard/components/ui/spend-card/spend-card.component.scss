@@ -1,0 +1,51 @@
+@use "../../../../../styles.scss" as scss;
+
+.table {
+  width: 100%;
+  color: scss.$atrib-text-color;
+  padding: 0.5rem;
+}
+
+.table-header {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+
+  > * {
+    flex: 1 1 100%;
+  }
+
+  p {
+    font-family: scss.$conv-font;
+    font-weight: 800;
+  }
+}
+
+.table-row {
+  display: flex;
+  width: 100%;
+}
+
+.table-data {
+  flex: 1 1 33%;
+  text-align: left;
+
+  &:nth-child(1) {
+    //border: red 3px solid;
+    padding-left: 1rem;
+  }
+  &:nth-child(2) {
+    //border: green 3px solid;
+    text-align: center;
+  }
+  &:nth-child(3) {
+    //border: blue 3px solid;
+    text-align: center;
+  }
+}
+
+.table-data {
+  font-family: scss.$special-font;
+  font-size: 0.75rem;
+  font-weight: 500;
+}

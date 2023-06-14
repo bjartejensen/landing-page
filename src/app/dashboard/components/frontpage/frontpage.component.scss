@@ -1,0 +1,111 @@
+@use "../../../../styles.scss" as scss;
+
+$m: 1rem;
+
+.global-container {
+  display: grid;
+  grid-template-columns: auto;
+  width: 100vw;
+  place-items: center center;
+}
+
+.dashboard {
+  display: grid;
+  overflow: hidden;
+  background-color: scss.$atrib-background-color; //map-get(scss.$atrib-palette-primary, 50);
+  grid-template-columns: 22.5% 22.5% 22.5% 1fr;
+  grid-template-rows: 10% 35% 45%;
+  width: min(calc(100% - 2 * $m), 2000px);
+  height: calc(100vh - 2 * $m);
+  gap: $m;
+  margin: $m;
+  padding: 1rem;
+
+  grid-template-areas:
+    "header header header header"
+    "mix cpa drivers data-tabel"
+    "data-chart data-chart data-chart spend-tabel";
+
+  @media (max-width: 699px) {
+  }
+
+  > * {
+    text-align: center;
+    height: 100%;
+    background-color: scss.$atrib-dialog-color;
+    border-radius: 10px;
+    box-shadow: 0px 0px 0.25rem 0px scss.$atrib-blue;
+  }
+}
+
+.header {
+  grid-area: header;
+  display: grid;
+  place-items: center;
+
+  h2 {
+    color: scss.$atrib-text-color;
+    font-family: scss.$conv-font;
+    font-size: 2.75rem;
+    font-weight: 700;
+    margin: auto;
+  }
+}
+
+.mix {
+  grid-area: mix;
+}
+
+.cpa {
+  grid-area: cpa;
+}
+
+.drivers {
+  grid-area: drivers;
+}
+
+.data-chart {
+  grid-area: data-chart;
+}
+
+.data-tabel {
+  grid-area: data-tabel;
+  background-color: scss.$atrib-dialog-color;
+  transition: box-shadow 150ms ease-in;
+  background: linear-gradient(
+    90deg,
+    scss.$atrib-dialog-color 75%,
+    hsl(204, 47%, 68%) 150%
+  );
+
+  &:hover {
+    box-shadow: 0px 0px 0.5rem 2px scss.$atrib-blue;
+    cursor: pointer;
+  }
+}
+
+.spend-tabel {
+  position: relative;
+  grid-area: spend-tabel;
+  overflow: hidden;
+  background-color: scss.$atrib-dialog-color;
+
+  transition: box-shadow 150ms ease-in;
+
+  :after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: linear-gradient(to bottom, transparent, black 90%);
+    width: 100%;
+    height: 4em;
+  }
+
+  &:hover {
+    box-shadow: 0px 0px 0.5rem 2px scss.$atrib-blue;
+    cursor: pointer;
+  }
+}

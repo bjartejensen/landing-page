@@ -1,0 +1,61 @@
+@use "../../../../../styles.scss" as scss;
+
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+.container {
+  position: relative;
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "datapoints nspend";
+  height: 100%;
+  color: scss.$atrib-text-color;
+
+  &:hover {
+    .header {
+      h6 {
+        font-size: 1.15rem;
+        line-height: 1.25rem;
+      }
+    }
+  }
+}
+
+.header {
+  //background-color: orangered;
+  grid-area: header;
+
+  h6 {
+    font-family: scss.$special-font;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    font-weight: 600;
+    color: scss.$atrib-text-color;
+    text-align: left;
+    padding-block: 0.5rem;
+    padding-inline: 1rem;
+
+    transition: line-height 200ms ease-in, font-size 200ms ease-in;
+  }
+}
+
+h4 {
+  font-size: 4rem;
+  font-weight: 800;
+}
+
+p {
+  padding-block: 1rem;
+}
+
+.data-points {
+  grid-area: datapoints;
+}
+
+.n-spend-vars {
+  grid-area: nspend;
+}

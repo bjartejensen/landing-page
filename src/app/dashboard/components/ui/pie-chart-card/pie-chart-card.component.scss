@@ -1,0 +1,9 @@
+.chart {
+  display: grid;
+  place-items: end;
+  padding: 1rem;
+
+  &:hover {
+    pointer-events: none;
+  }
+}

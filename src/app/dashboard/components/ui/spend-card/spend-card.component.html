@@ -1,0 +1,11 @@
+<table class="table">
+  <div class="table-header">
+    <p *ngFor="let h of headers" class="header-item">{{ h }}</p>
+  </div>
+
+  <tr class="table-row" *ngFor="let i of spendNames">
+    <td class="table-data">{{ i.name }}</td>
+    <td class="table-data">{{ i.allocation }}</td>
+    <td class="table-data">{{ i.percent | percent }}</td>
+  </tr>
+</table>

@@ -15,5 +15,15 @@ $atrib-light-theme: mat.define-light-theme(
   )
 );
 
-@include mat.all-component-themes($atrib-light-theme);
+$atrib-dark-theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: $primary,
+      accent: $accent,
+      warn: $warn,
+    ),
+  )
+);
+
+@include mat.all-component-themes($atrib-dark-theme);
 @include mat.core();
