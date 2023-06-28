@@ -1,0 +1,165 @@
+@use "../../../../../styles.scss" as scss;
+
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+$w: clamp(650px, 50vw, 850px);
+$border-radius: 10px;
+$min-height-validation-item: 3rem;
+$inline-padding: 0.5rem;
+
+[data-valid="true"] {
+  background-color: scss.$atrib-green;
+}
+
+[data-valid="false"] {
+  background-color: scss.$atrib-red;
+}
+
+[disabled="true"] {
+  pointer-events: none;
+  opacity: 0.25;
+  filter: grayscale(0.5);
+}
+
+p[valid="true"] {
+  color: scss.$atrib-green;
+}
+
+p[valid="false"] {
+  color: scss.$atrib-red;
+}
+
+.container {
+  position: relative;
+  display: grid;
+  width: 100%;
+  height: 100vh;
+  color: scss.$atrib-text-color;
+}
+
+.data-validation-card {
+  position: relative;
+  display: grid;
+  width: $w;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "overall-status"
+    "validation-items-global";
+  background-color: scss.$atrib-dialog-color;
+  border-radius: $border-radius;
+  margin: auto;
+  @include scss.component-shadow($color: black);
+}
+
+.overall-status {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  grid-area: overall-status;
+  border-radius: $border-radius $border-radius 0px 0px;
+  height: 2.5rem;
+  padding-inline: $inline-padding;
+
+  h4 {
+    font-family: scss.$conv-font;
+    font-weight: 600;
+    text-align: center;
+    margin: auto 0%;
+  }
+
+  > * + * {
+    margin-left: 2rem;
+  }
+}
+
+.validation-items-global {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  grid-area: validation-items-global;
+  gap: 1rem;
+  padding-inline: $inline-padding;
+}
+
+p {
+  margin: auto 0%;
+}
+
+.validation-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: scss.$atrib-background-color;
+  height: $min-height-validation-item;
+  padding-inline: $inline-padding;
+
+  .key {
+    display: flex;
+    width: calc($w * 0.4);
+    flex: 0 0 calc($w * 0.4);
+    align-items: center;
+    padding: $inline-padding;
+    border-right: 1px dashed scss.$atrib-blue;
+
+    p {
+      font-family: scss.$special-font;
+      text-align: left;
+    }
+  }
+
+  .status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    text-transform: uppercase;
+    padding: $inline-padding;
+
+    p {
+      text-align: center;
+      font-family: scss.$special-font;
+      white-space: nowrap;
+      font-weight: 600;
+    }
+  }
+
+  .message {
+    display: flex;
+    flex: 1 1 50%;
+
+    p {
+      font-style: italic;
+      text-align: right;
+    }
+  }
+
+  .cta {
+    position: relative;
+    display: flex;
+    flex: 1 1 50%;
+    justify-content: flex-end;
+
+    button {
+      display: inline-block;
+      width: fit-content;
+      font-weight: 400;
+      margin-inline: 0.5rem;
+      border-radius: 20px;
+      font-family: scss.$special-font;
+      color: scss.$atrib-text-color;
+      background-color: map-get(scss.$atrib-palette-primary, 900);
+    }
+  }
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.25;
+  filter: grayscale(0.5);
+}

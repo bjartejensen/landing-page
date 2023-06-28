@@ -3,6 +3,7 @@
 
 $atrib-blue: map-get(pal.$atrib-palette-primary, 500);
 $atrib-green: map-get(pal.$atrib-palette-accent, 500);
+$atrib-red: map-get(pal.$atrib-palette-warn, 500);
 
 $atrib-dialog-color: map-get(
   map-get(theme.$atrib-dark-theme, background),
@@ -16,3 +17,6 @@ $atrib-background-color: map-get(
 
 $atrib-text-color: map-get(map-get(theme.$atrib-dark-theme, foreground), text);
 $dark-text: hsl(240, 25%, 25%);
+
+$atrib-component-shadow-color: black; //map-get(theme.$atrib-palette-primary, 900);
+$atrib-border-color: black; //$atrib-text-color;

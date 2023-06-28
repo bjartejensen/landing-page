@@ -34,3 +34,12 @@
     }
   }
 }
+
+@mixin component-shadow(
+  $degree: 2px,
+  $spreadout: 12px,
+  $visibility: 0.15,
+  $color: colors.$atrib-component-shadow-color
+) {
+  box-shadow: 0 $degree calc($spreadout + $degree) 0 rgba($color, $visibility);
+}

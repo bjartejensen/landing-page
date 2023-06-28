@@ -1,5 +1,14 @@
 //Map of all supported screen resolution breaks
-$w-map: "m" 299, "sm" 699, "md" 899, "lg" 1199, "xl" 1399, "mg" 1799;
+
+/**
+mobile: minmax(299px,600px)
+small (eq.tablet portrait):(600px,840px)
+medium (eq. tablet landscape): (840px,1280px)
+large: (1280px, 1920px)
+xl: 1920px+ 
+*/
+
+$w-map: "m" 299, "sm" 600, "md" 840, "lg" 1280, "xl" 1920;
 
 //Map of types of alignments
 $align-map: "center" center, "start" start, "end" end;

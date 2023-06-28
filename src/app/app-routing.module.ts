@@ -14,6 +14,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
   },
+  {
+    path: 'sandbox',
+    loadChildren: () =>
+      import('./sandbox/sandbox.module').then((m) => m.SandboxModule),
+  },
 ];
 
 @NgModule({

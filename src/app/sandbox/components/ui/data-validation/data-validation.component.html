@@ -1,0 +1,113 @@
+<div class="container">
+  <div class="data-validation-card" data-cy="mmm-data-validatation-overview">
+    <div
+      class="overall-status"
+      data-cy="overall-status"
+      [attr.data-valid]="dataValidation.valid"
+    >
+      <h4>Over all Status</h4>
+      <mat-icon data-cy="overall-status-icon" class="valid">{{
+        dataValidation.valid ? "done" : "close"
+      }}</mat-icon>
+    </div>
+
+    <div class="validation-items-global pb-sm-1">
+      <div class="validation-item">
+        <div class="key">
+          <p data-cy="empty-rows-key">Empty Rows</p>
+        </div>
+        <div class="message pi-sm-05">
+          <p data-cy="empty-rows-text" *ngIf="dataValidation.nEmptyRows > 0">
+            {{ dataValidation.nEmptyRows }} empty rows has been deleted
+          </p>
+        </div>
+      </div>
+
+      <div class="validation-item">
+        <div class="key">
+          <p data-cy="min-obs-key">Min. No. observations</p>
+        </div>
+        <div class="status">
+          <p data-cy="min-obs-status" [attr.valid]="dataValidation.validNObs">
+            {{ dataValidation.validNObs ? "ok" : "not ok" }}
+          </p>
+        </div>
+        <div class="message" *ngIf="!dataValidation.validNObs">
+          <p>To few obs. for MMM!</p>
+        </div>
+      </div>
+
+      <div
+        class="validation-item"
+        data-cy="numbers-only-item"
+        [attr.disabled]="!EnableNonNumeric"
+      >
+        <div class="key">
+          <p data-cy="numbers-only-key">Numbers Only</p>
+        </div>
+        <div class="status">
+          <p
+            data-cy="numbers-only-status"
+            [attr.valid]="dataValidation.validNonNumeric"
+          >
+            {{ dataValidation.validNonNumeric ? "ok" : "fix" }}
+          </p>
+        </div>
+        <div class="cta" *ngIf="!dataValidation.validNonNumeric">
+          <div class="cta-validation cta-non-numeric">
+            <button
+              data-cy="correct-non-numeric-mmm-data-try-convert"
+              mat-raised-button
+              class="fs-sm-075"
+            >
+              Try convert
+            </button>
+            <button
+              data-cy="correct-non-numeric-mmm-data-set-zero"
+              mat-raised-button
+              class="fs-sm-075"
+            >
+              Set to Zero
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="validation-item"
+        data-cy="non-negative-item"
+        [attr.disabled]="!EnableNonNegative"
+      >
+        <div class="key">
+          <p data-cy="non-negative-key">Non Negative Values Only</p>
+        </div>
+        <div class="status">
+          <p
+            data-cy="non-negative-status"
+            [attr.valid]="dataValidation.validNonNegative"
+          >
+            {{ dataValidation.validNonNegative ? "ok" : "fix" }}
+          </p>
+        </div>
+        <div class="cta" *ngIf="!dataValidation.validNonNegative">
+          <div class="cta-validation cta-non-numeric">
+            <button
+              data-cy="correct-non-numeric-mmm-data-try-convert"
+              mat-raised-button
+              class="fs-sm-075"
+            >
+              Absolute value
+            </button>
+            <button
+              data-cy="correct-non-numeric-mmm-data-set-zero"
+              mat-raised-button
+              class="fs-sm-075"
+            >
+              Set to Zero
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
