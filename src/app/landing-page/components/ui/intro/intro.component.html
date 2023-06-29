@@ -1,4 +1,4 @@
-<div class="container gap-m-2 pb-m-1 pi-m-1 pi-md-5 pb-xl-0">
+<div @reveal class="container gap-m-2 pb-m-1 pi-m-1 pi-md-5 pb-xl-0">
   <div class="header pb-m-1 pb-sm-2 pb-xl-2">
     <h1 class="fs-m-3 fw-m-800 mb-m-2 fs-lg-4 cw-md-75 cw-xl-50">
       We democratise advanced marketing tools
@@ -6,8 +6,6 @@
     <button
       mat-raised-button
       (click)="selectedPageEmitter.emit('why')"
-      color="primary"
-      appButton
       class="mi-sm-2"
     >
       Read more
@@ -91,6 +89,7 @@
     class="card-container container gap-m-2 gap-mg-5 pi-m-1 pb-m-3 mi-m-5 mi-sm-10 mi-md-1 pi-md-5 pb-xl-5 mi-lg-5 mi-xl-12"
   >
     <app-card
+      class="card"
       title="Easily Fetch your Data"
       details="Smoothly integrate your marketing and sales channels"
       imgUrl="../../../../../assets/atrib/landing/section_2/cards/card_1.svg"

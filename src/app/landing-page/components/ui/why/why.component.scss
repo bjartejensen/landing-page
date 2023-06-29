@@ -1,5 +1,26 @@
 @use "../../../../../styles.scss" as scss;
 
+section {
+  width: 90%;
+  margin-inline: auto;
+  border-radius: 0.5rem;
+  @include scss.component-shadow($color: black);
+
+  background: linear-gradient(
+    90deg,
+    map-get(scss.$atrib-palette-accent, 400) -100%,
+    scss.$atrib-dialog-color 50%
+  );
+
+  &:nth-child(2n + 0) {
+    background: linear-gradient(
+      90deg,
+      scss.$atrib-dialog-color 50%,
+      map-get(scss.$atrib-palette-accent, 400) 200%
+    );
+  }
+}
+
 .illustration {
   display: grid;
   align-items: center;
@@ -13,6 +34,7 @@
 
 .content {
   display: grid;
+  color: scss.$atrib-text-color;
 
   .desc {
     justify-content: center;

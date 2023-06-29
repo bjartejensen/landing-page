@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FrontpageComponent } from './components/frontpage/frontpage.component';
 import { WhyComponent } from './components/ui/why/why.component';
 import { HowComponent } from './components/ui/how/how.component';
+import { SandboxComponent } from './components/ui/sandbox/sandbox.component';
 
 const routes: Routes = [
   {
@@ -20,6 +21,10 @@ const routes: Routes = [
   {
     path: 'how',
     component: HowComponent,
+  },
+  {
+    path: 'sandbox',
+    component: SandboxComponent,
   },
 ];
 

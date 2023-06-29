@@ -9,7 +9,7 @@
   grid-template-columns: 1fr 1fr 1fr;
   justify-self: center;
   align-items: center;
-  border-bottom: rgb(184, 181, 181) 2px solid;
+  //border-bottom: rgb(184, 181, 181) 2px solid;
 
   @media (max-width: 699px) {
     grid-template-columns: 1fr 1fr;
@@ -40,7 +40,6 @@
 
     li {
       color: scss.$atrib-text-color;
-      color: scss.$dark-text;
       font-family: scss.$special-font;
       &:hover {
         cursor: pointer;
@@ -58,5 +57,9 @@
 
   button {
     font-family: scss.$special-font;
+    font-weight: 600;
+    color: scss.$atrib-text-color;
+    background-color: scss.$atrib-blue;
+    border-radius: 1rem;
   }
 }

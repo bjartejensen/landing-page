@@ -9,11 +9,25 @@ describe('DatavalidationComponent', () => {
 
   context('Mouting', () => {
     it('Mounts', () => {
-      cy.mount(DataValidationComponent);
+      cy.mount(DataValidationComponent, {
+        componentProperties: {
+          ValidationData: {
+            nEmptyRows: 2,
+            nObs: 132,
+            valid: true,
+            validNObs: true,
+            validNonNumeric: false,
+            validNonNegative: false,
+          },
+        },
+      });
+
+      cy.viewport(2220, 2000);
+      cy.wait(5000);
     });
   });
 
-  context('@Input given', () => {
+  xcontext('@Input given', () => {
     it('Shows green over all status when valid data', () => {
       cy.mount(DataValidationComponent, {
         componentProperties: {

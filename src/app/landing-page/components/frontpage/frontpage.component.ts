@@ -11,7 +11,7 @@ import {
 } from '@angular/core';
 import { BehaviorSubject, Observable, map } from 'rxjs';
 
-export type TSelectedPage = 'home' | 'why' | 'how';
+export type TSelectedPage = 'home' | 'why' | 'how' | 'sandbox';
 
 @Component({
   selector: 'app-frontpage',
@@ -45,6 +45,7 @@ export class FrontpageComponent {
     ['Home', 'home'],
     ['Why', 'why'],
     ['How', 'how'],
+    ['Sandbox', 'sandbox'],
   ]);
 
   //#endregion

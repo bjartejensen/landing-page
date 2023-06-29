@@ -2,11 +2,18 @@
 
 .container {
   display: grid;
-  background-color: map-get(scss.$atrib-palette-primary, 50);
+
   grid-template-columns: 50% 25% 25%;
   grid-template-areas:
     "header navigation about"
     "header navigation about";
+
+  // background: linear-gradient(
+  //   90deg,
+  //   map-get(scss.$atrib-palette-accent, 500) 0%,
+  //   map-get(scss.$atrib-palette-accent, 300) 100%
+  // );
+  color: scss.$atrib-text-color;
 
   @media (max-width: 699px) {
     grid-template-columns: 40% 30% 30%;

@@ -19,6 +19,7 @@ import { ScrollToSectionDirective } from './directives/scroll-to-section.directi
 import { ButtonDirective } from './directives/button.directive';
 import { IntroComponent } from './components/ui/intro/intro.component';
 import { IntroSectionDirective } from './directives/intro-section.directive';
+import { SandboxComponent } from './components/ui/sandbox/sandbox.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { IntroSectionDirective } from './directives/intro-section.directive';
     ButtonDirective,
     IntroComponent,
     IntroSectionDirective,
+    SandboxComponent,
   ],
   imports: [
     CommonModule,

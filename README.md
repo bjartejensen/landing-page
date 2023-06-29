@@ -1,3 +1,5 @@
+[![E2E tests](https://github.com/bjartejensen/landing-page/actions/workflows/e2e_tests.yml/badge.svg)](https://github.com/bjartejensen/landing-page/actions/workflows/e2e_tests.yml)
+
 # Building a Reponsive Landing Page with Angular
 
 Building a responsive website can be a challenging task. Users expects every format - from mobile to large screens - to be supported. And the better we are able to execute on responsiveness, the more trust we build with your users. So let's dive into my approach to responsiveness of this [simple landing page](https://atrib-landing-page.netlify.app)
