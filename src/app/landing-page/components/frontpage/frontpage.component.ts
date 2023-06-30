@@ -31,7 +31,7 @@ export class FrontpageComponent {
     .observe(['(max-width: 699px)'])
     .pipe(map((x) => x.matches));
 
-  selectedPageSubject = new BehaviorSubject<TSelectedPage>('sandbox');
+  selectedPageSubject = new BehaviorSubject<TSelectedPage>('home');
   selectedPage$: Observable<TSelectedPage> =
     this.selectedPageSubject.asObservable();
 

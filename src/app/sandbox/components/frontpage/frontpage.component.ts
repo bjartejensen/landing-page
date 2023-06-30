@@ -11,7 +11,7 @@ export class FrontpageComponent {
   //#region Observables
 
   selectedComponentSubject = new BehaviorSubject<TSelectedComponent>(
-    'line-chart'
+    'data-validation'
   );
   selectedComponent$: Observable<TSelectedComponent> =
     this.selectedComponentSubject.asObservable();
