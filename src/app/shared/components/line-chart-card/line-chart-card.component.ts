@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 import {
   ChartComponent,
@@ -36,13 +36,20 @@ export class LineChartCardComponent implements OnInit {
   ngOnInit(): void {
     this.chartConfig = {
       chart: {
-        id: 'spark1',
         group: 'sparks',
         type: 'line',
-        width: '100%',
-        height: 200,
+        animations: { speed: 400, enabled: false },
+        toolbar: {
+          tools: {
+            pan: false,
+            reset: false,
+            zoomin: false,
+            zoomout: false,
+            zoom: false,
+          },
+        },
         sparkline: {
-          enabled: true,
+          enabled: false,
         },
         dropShadow: {
           enabled: false,
@@ -63,6 +70,13 @@ export class LineChartCardComponent implements OnInit {
           data: [15, 110, 60, 80, 64],
         },
       ],
+
+      options: {
+        legend: { show: false },
+        yaxis: {
+          show: true,
+        },
+      },
       fill: {
         type: 'gradient',
         gradient: {
@@ -74,7 +88,6 @@ export class LineChartCardComponent implements OnInit {
           stops: [50, 100],
         },
       },
-
       stroke: {
         curve: 'smooth',
       },

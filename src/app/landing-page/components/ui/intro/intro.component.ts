@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { TSelectedPage } from '../../frontpage/frontpage.component';
 import { reveal } from 'src/app/shared/animations/animations';
+import { TSelectedPage } from 'src/app/shared/types/types';
 
 @Component({
   selector: 'app-intro',

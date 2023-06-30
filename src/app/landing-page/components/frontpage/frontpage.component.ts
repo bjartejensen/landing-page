@@ -10,8 +10,7 @@ import {
   OnInit,
 } from '@angular/core';
 import { BehaviorSubject, Observable, map } from 'rxjs';
-
-export type TSelectedPage = 'home' | 'why' | 'how' | 'sandbox';
+import { TSelectedPage } from 'src/app/shared/types/types';
 
 @Component({
   selector: 'app-frontpage',

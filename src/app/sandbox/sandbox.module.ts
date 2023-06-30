@@ -6,6 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { FrontpageComponent } from './components/frontpage/frontpage.component';
 import { SharedModule } from '../shared/shared.module';
+import { DashboardModule } from '../dashboard/dashboard.module';
 
 @NgModule({
   declarations: [DataValidationComponent, FrontpageComponent],
@@ -15,6 +16,7 @@ import { SharedModule } from '../shared/shared.module';
     MatButtonModule,
     MatIconModule,
     SharedModule,
+    DashboardModule,
   ],
   exports: [FrontpageComponent],
 })

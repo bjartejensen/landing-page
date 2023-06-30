@@ -5,7 +5,7 @@ import {
   Output,
   ChangeDetectionStrategy,
 } from '@angular/core';
-import { TSelectedPage } from '../../frontpage/frontpage.component';
+import { TSelectedPage } from 'src/app/shared/types/types';
 
 @Component({
   selector: 'app-header',

@@ -12,9 +12,9 @@ import { DataTableCardComponent } from './components/ui/data-table-card/data-tab
 import { PieChartCardComponent } from './components/ui/pie-chart-card/pie-chart-card.component';
 import { AreaChartCardComponent } from './components/ui/area-chart-card/area-chart-card.component';
 import { BarChartCardComponent } from './components/ui/bar-chart-card/bar-chart-card.component';
-import { LineChartCardComponent } from './components/ui/line-chart-card/line-chart-card.component';
 import { ModalWrapperComponent } from './components/ui/modal-wrapper/modal-wrapper.component';
 import { YaxisPipe } from '../shared/pipes/yaxis.pipe';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,6 @@ import { YaxisPipe } from '../shared/pipes/yaxis.pipe';
     PieChartCardComponent,
     AreaChartCardComponent,
     BarChartCardComponent,
-    LineChartCardComponent,
     ModalWrapperComponent,
   ],
   imports: [
@@ -34,6 +33,7 @@ import { YaxisPipe } from '../shared/pipes/yaxis.pipe';
     DashboardRoutingModule,
     NgApexchartsModule,
     OverlayModule,
+    SharedModule,
   ],
   providers: [YaxisPipe],
 })

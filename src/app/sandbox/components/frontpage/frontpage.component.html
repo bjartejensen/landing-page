@@ -1,11 +1,31 @@
 <reveal-wrap>
   <div class="container">
-    <div class="menu">
-      <button mat-button appAtButton>Charts</button>
-      <button mat-button appAtButton atColor="warn">Data Validation</button>
+    <div class="menu pi-lg-05">
+      <button
+        *ngFor="let mi of menuItems!.keys()"
+        mat-button
+        appAtButton
+        (click)="onComponentSelected(menuItems.get(mi))"
+      >
+        {{ mi }}
+      </button>
     </div>
     <div class="display-area">
-      <h2>Here is this display area</h2>
+      <ng-container [ngSwitch]="selectedComponent$ | async">
+        <ng-container *ngSwitchCase="'data-validation'">
+          <reveal-wrap>
+            <app-data-validation></app-data-validation>
+          </reveal-wrap>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="'line-chart'">
+          <reveal-wrap>
+            <div appApexDimensions class="cvw-sm-70 cvw-md-50">
+              <app-line-chart-card></app-line-chart-card>
+            </div>
+          </reveal-wrap>
+        </ng-container>
+      </ng-container>
     </div>
   </div>
 </reveal-wrap>

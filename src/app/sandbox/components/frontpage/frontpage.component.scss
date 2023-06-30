@@ -17,13 +17,13 @@
   grid-template-areas:
     "menu-bar"
     "display-area";
-  grid-template-rows: 10% 90%;
-  gap: 1rem;
+  grid-template-rows: 3rem 1fr;
   background: linear-gradient(
     90deg,
     scss.$atrib-dialog-color 50%,
     map-get(scss.$atrib-palette-primary, 400) 200%
   );
+  border-radius: 0.5rem;
 }
 
 .menu {
@@ -35,14 +35,12 @@
   gap: 1rem;
   width: 100%;
   height: 100%;
+  border-bottom: 1px scss.$atrib-blue solid;
 }
 
 .display-area {
+  position: relative;
   grid-area: display-area;
   display: grid;
   place-items: center center;
-  //background-color: paleturquoise;
-  width: 100%;
-  height: 100%;
-  color: scss.$atrib-text-color;
 }

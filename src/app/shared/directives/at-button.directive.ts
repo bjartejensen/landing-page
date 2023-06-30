@@ -6,7 +6,7 @@ import { Directive, Host, HostBinding, Input } from '@angular/core';
 export class AtButtonDirective {
   @Input('atColor') color: 'primary' | 'accent' | 'warn' = 'primary';
 
-  @HostBinding('style.display') d = 'block';
+  //@HostBinding('style.display') d = 'block';
   @HostBinding('style.border-radius') br = '100vmax';
   @HostBinding('style.font-weight') fw = 300;
   @HostBinding('style.letter-spacing') ls = '0.5px';

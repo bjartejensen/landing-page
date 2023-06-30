@@ -1,4 +1,4 @@
-[![E2E tests](https://github.com/bjartejensen/landing-page/actions/workflows/e2e_tests.yml/badge.svg)](https://github.com/bjartejensen/landing-page/actions/workflows/e2e_tests.yml)
+[![Component tests](https://github.com/bjartejensen/landing-page/actions/workflows/component_tests.yml/badge.svg?branch=main&event=push)](https://github.com/bjartejensen/landing-page/actions/workflows/component_tests.yml)
 
 # Building a Reponsive Landing Page with Angular
 

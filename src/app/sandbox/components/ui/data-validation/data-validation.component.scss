@@ -36,8 +36,6 @@ p[valid="false"] {
 .container {
   position: relative;
   display: grid;
-  width: 100vw;
-  height: 100vh;
   color: scss.$atrib-text-color;
 }
 
@@ -142,19 +140,8 @@ p {
   .cta {
     position: relative;
     display: flex;
-    flex: 1 1 50%;
+    flex: 1 1 60%;
     justify-content: flex-end;
-
-    button {
-      display: inline-block;
-      width: fit-content;
-      font-weight: 400;
-      margin-inline: 0.5rem;
-      border-radius: 20px;
-      font-family: scss.$special-font;
-      color: scss.$atrib-text-color;
-      background-color: map-get(scss.$atrib-palette-primary, 900);
-    }
   }
 }
 
