@@ -32,7 +32,6 @@
     "turqoise turqoise";
   height: 100%;
   min-height: 80vh;
-  max-width: 1500px;
   margin-inline: auto;
 
   @media (max-width: 699px) {
@@ -52,16 +51,7 @@
   justify-content: center;
   align-items: center;
   grid-area: header;
-  //background: linear-gradient(90deg, hsl(0, 0%, 65%) 0%, hsl(0, 0%, 70%) 100%);
   border-radius: 0.25rem;
-
-  button {
-    font-family: scss.$special-font;
-    font-weight: 600;
-    color: scss.$atrib-text-color;
-    background-color: scss.$atrib-blue;
-    border-radius: 1rem;
-  }
 
   h1 {
     color: map-get(scss.$atrib-palette-primary, 800);
@@ -297,20 +287,6 @@
   align-items: center;
 
   > * {
-    // background: linear-gradient(
-    //   90deg,
-    //   map-get(scss.$atrib-palette-primary, 100) 0%,
-    //   map-get(scss.$atrib-palette-primary, 200) 100%
-    // );
-
-    // &:nth-child(2n + 0) {
-    //   background: linear-gradient(
-    //     90deg,
-    //     map-get(scss.$atrib-palette-primary, 200) 0%,
-    //     map-get(scss.$atrib-palette-primary, 100) 100%
-    //   );
-    // }
-
     background: linear-gradient(
       180deg,
       map-get(scss.$atrib-palette-primary, 200) -20%,

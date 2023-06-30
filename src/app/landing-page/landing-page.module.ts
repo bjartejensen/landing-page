@@ -14,12 +14,15 @@ import { MatIconModule } from '@angular/material/icon';
 import { LayoutModule } from '@angular/cdk/layout';
 import { CardComponent } from './components/ui/card/card.component';
 import { TwoColsImgDirective } from './directives/two-cols-img.directive';
-import { ViewMaxWidthDirective } from './directives/view-max-width.directive';
 import { ScrollToSectionDirective } from './directives/scroll-to-section.directive';
-import { ButtonDirective } from './directives/button.directive';
 import { IntroComponent } from './components/ui/intro/intro.component';
-import { IntroSectionDirective } from './directives/intro-section.directive';
+import { SectionDirective } from './directives/intro-section.directive';
 import { SandboxComponent } from './components/ui/sandbox/sandbox.component';
+import { SandboxModule } from '../sandbox/sandbox.module';
+import { SectionContentDirective } from './directives/section-content.directive';
+import { SectionDescDirective } from './directives/section-desc.directive';
+import { TwoColumnsDirective } from './directives/two-columns.directive';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -31,12 +34,13 @@ import { SandboxComponent } from './components/ui/sandbox/sandbox.component';
     FooterComponent,
     CardComponent,
     TwoColsImgDirective,
-    ViewMaxWidthDirective,
     ScrollToSectionDirective,
-    ButtonDirective,
     IntroComponent,
-    IntroSectionDirective,
+    SectionDirective,
     SandboxComponent,
+    SectionContentDirective,
+    SectionDescDirective,
+    TwoColumnsDirective,
   ],
   imports: [
     CommonModule,
@@ -45,6 +49,8 @@ import { SandboxComponent } from './components/ui/sandbox/sandbox.component';
     MatButtonModule,
     MatIconModule,
     LayoutModule,
+    SandboxModule,
+    SharedModule,
   ],
   exports: [FrontpageComponent],
 })

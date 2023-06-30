@@ -5,10 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LandingPageModule } from './landing-page/landing-page.module';
-import { MaxWidthDirective } from './shared/directives/max-width.directive';
 
 @NgModule({
-  declarations: [AppComponent, MaxWidthDirective],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

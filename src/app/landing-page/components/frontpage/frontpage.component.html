@@ -3,7 +3,7 @@
 </ng-template>
 
 <div class="global-container" scrollToSection #scrollRef="scrollInstance">
-  <header appViewMaxWidth id="header">
+  <header appMaxWidth forceMaxWidth="100vw" id="header">
     <app-header
       [navItems]="menuItems"
       [mobileMenuActive]="mobileMenuActive"
@@ -14,7 +14,7 @@
     </app-header>
   </header>
 
-  <main appViewMaxWidth class="mt-xl-4">
+  <main appMaxWidth class="mt-xl-4">
     <ng-container [ngSwitch]="selectedPage$ | async">
       <ng-container *ngSwitchCase="'home'">
         <!-- <app-home></app-home> -->
@@ -29,13 +29,13 @@
         <app-how></app-how>
       </ng-container>
 
-      <ng-container *gSwitchDefault>
-        <h6>Upsi!</h6>
+      <ng-container *ngSwitchCase="'sandbox'">
+        <sandbox-frontpage></sandbox-frontpage>
       </ng-container>
     </ng-container>
   </main>
 
-  <footer appViewMaxWidth>
+  <footer appMaxWidth>
     <app-footer
       [navItems]="menuItems"
       (selectedPageEmitter)="

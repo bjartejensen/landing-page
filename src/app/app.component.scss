@@ -1,0 +1,12 @@
+@use "../styles.scss" as scss;
+
+// .at-button {
+//   display: block;
+//   font-family: scss.$special-font;
+//   color: scss.$atrib-text-color;
+//   background-color: rebeccapurple;
+// }
+
+.at-button {
+  border: 5px dashed rgb(14, 209, 14);
+}
